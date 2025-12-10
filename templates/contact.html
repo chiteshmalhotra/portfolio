@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section-padding">
+
+    <h2 class="fw-bold text-center"> Get in touch, let's talk.</h2>
+   
+    <p class="text-center text-muted">I will get back to you as soon as possible.</p>
+    <hr>
+
+    <div class="row g-3 d-flex align-items-stretch">
+
+        <!-- Left Section -->
+        <div class="col-md-4 d-flex order-2 order-md-1">
+            <div class="card border p-3 w-100 d-flex flex-column shadow-sm gap-3">
+                <h5 class="fw-bold mb-0">Contact Details</h5>
+
+                <!-- Email -->
+                <div>
+                    <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                        <i class="ph ph-envelope-simple fs-6 me-1"></i> Email
+                    </h6>
+                    <p class="mb-0">
+                        <a href="mailto:{{ links.email }}"
+                            class="link-underline">
+                            {{ links.email }}
+                        </a>
+                    </p>
+                </div>
+                
+                <!-- GitHub -->
+                <div>
+                    <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                        <i class="ph ph-github-logo fs-6 me-1"></i> GitHub
+                    </h6>
+                    <p class="mb-0">
+                        <a href="{{ links.github_url }}" target="_blank"
+                            class="link-underline">
+                            {{ links.github }}
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Twitter -->
+                <div>
+                    <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                        <i class="ph ph-twitter-logo fs-6 me-1"></i> Twitter
+                    </h6>
+                    <p class="mb-0">
+                        <a href="{{ links.twitter_url }}" target="_blank"
+                            class="link-underline">
+                            {{ links.twitter }}
+                        </a>
+                    </p>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div>
+                    <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                        <i class="ph ph-linkedin-logo fs-6 me-1"></i> LinkedIn
+                    </h6>
+                    <p class="mb-0">
+                        <a href="{{ links.linkedin_url }}" target="_blank"
+                            class="link-underline">
+                            {{ links.linkedin }}
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Address -->
+                <div class="mb-2">
+                    <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                        <i class="ph ph-map-pin fs-6 me-1"></i> Address
+                    </h6>
+                    <p class="mb-0">
+                        New Delhi, India
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section (Form) -->
+        <div class="col-md-8 d-flex order-1 order-md-2">
+            <div class="card border p-3 w-100 d-flex flex-column  shadow-sm">
+                <h5 class="fw-bold">Send me a message</h5>
+
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact" class="mt-auto">
+
+                    <input type="hidden" name="access_key" value="0b9a1fb9-c169-41ce-8981-11bd9925804f">
+                    <input type="hidden" name="botcheck" class="form-control" style="display:none;">
+                    <input type="hidden" name="redirect" value="{{ url_for('home', _external=True) }}?mail_status=sent">
+
+                    <div class="mb-2">
+                        <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                            <i class="ph ph-phone fs-6 me-1"></i> Name*
+                        </h6>
+                        <input type="text" name="name" id="nameInput" class="form-control" placeholder="Your name"
+                            required>
+                    </div>
+
+                    <div class="mb-2">
+                        <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                            <i class="ph ph-user fs-6 me-1"></i> Email*
+                        </h6>
+                        <input type="email" name="email" id="emailInput" class="form-control" placeholder="Your email"
+                            required>
+                    </div>
+
+                    <div class="mb-2">
+                        <h6 class="fw-semibold mb-1 d-flex align-items-center text-muted">
+                            <i class="ph ph-envelope-simple fs-6 me-1"></i> Message
+                        </h6>
+                        <textarea name="message" id="messageTextarea" class="form-control" rows="4"
+                            placeholder="Your message or just say hello"></textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn custom-btn-primary">
+                            <i class="ph ph-paper-plane-tilt me-1"></i> Send Message
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

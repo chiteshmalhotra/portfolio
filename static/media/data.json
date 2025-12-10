@@ -1,0 +1,54 @@
+{
+  "links": {
+    "github": "@chiteshmalhotra",
+    "github_url": "https://github.com/chiteshmalhotra",
+    "linkedin": "@chitesh-malhotra",
+    "linkedin_url": "https://www.linkedin.com/in/chitesh-malhotra/",
+    "twitter": "@CMalhotra47159",
+    "twitter_url": "https://x.com/CMalhotra47159",
+    "email": "chitesh.official@gmail.com",
+    "email_url": "mailto:chitesh.official@gmail.com",
+    "website": "https://example.com/"
+  },
+  "project_data": [
+    {
+      "title": "Project Title 1",
+      "tags": [
+        "python",
+        "flask",
+        "html5",
+        "css3",
+        "javascript"
+      ],
+      "url": "https://example.com/",
+      "image": "media/thumbnails/placeholder.png",
+      "github": "https://github.com/chiteshmalhotra",
+      "description": "This is a short description of the project. It explain coloreds what the project.This is a short description of the eds what the project.This is a short description of the project."
+    },
+    {
+      "title": "Project Title 2",
+      "tags": [
+        "python",
+        "flask",
+        "html5",
+        "css3",
+        "javascript"
+      ],
+      "url": "https://example.com/",
+      "image": "media/thumbnails/placeholder.png",
+      "github": "https://github.com/chiteshmalhotra",
+      "description": "Another project description goes here. Keep it concise and informative.Another project description goes here. Keep it concise and informative.Another project description goes here."
+    }
+  ],
+  "stack": {
+  "python": "<i class=\"devicon-python-plain text-primary fs-5 \"></i>",
+  "numpy": "<i class=\"devicon-numpy-plain colored fs-5 \"></i>",
+  "pandas": "<i class=\"devicon-pandas-plain fs-5 \"></i>",
+  "matplotlib": "<i class=\"devicon-matplotlib-plain fs-5 \"></i>",
+  "bootstrap": "<i class=\"devicon-bootstrap-plain colored fs-5 \"></i>",
+  "flask": "<i class=\"devicon-flask-original fs-5 \"></i>",
+  "sql": "<i class=\"devicon-azuresqldatabase-plain colored fs-5 \"></i>",
+  "github": "<i class=\"devicon-github-original fs-5 \"></i>"
+}
+
+}

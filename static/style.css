@@ -1,0 +1,536 @@
+/* BASE THEME VARIABLES */
+:root {
+    --width: 700px;
+
+    --bg: #000;
+    --text: white;
+    --accent: var(--bs-warning);
+    --shine:rgba(255,255,255,0.4);
+}
+
+/* LIGHT THEME */
+:root[data-bs-theme='light'] {
+    --bg: white;
+    --text: black;
+    --accent: var(--bs-success);
+    --shine:rgba(155, 155, 155, 0.4);
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+h1, h2, h3, h4 {
+  font-family: 'Fira Code', monospace;
+}
+
+.my-font{
+    font-family: 'Fira Code', monospace;
+} */
+
+
+
+::selection {
+  color: var(--bg);
+  background-color: var(--accent);
+}
+/* helper */
+.main-width {
+    max-width: var(--width);
+    width: 100%;
+}
+
+.bg {
+    background-color: var(--bg);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.text-normal {
+    color: var(--text) !important;
+}
+
+.link-underline {
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.link-underline:hover {
+    color: var(--text);
+    text-decoration: underline var(--text) 1px !important;
+    text-underline-offset: 3px;
+}
+
+.core-skill{
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-style: bold;
+    border: 3px dotted var(--accent);
+    border-radius: 10px;
+    padding: 0 5px 0 5px;
+    line-height: 1.2;
+    /* text-decoration: underline var(--accent) 2px !important; */
+}
+
+.overlay {
+    position: relative;
+    text-align: center;
+}
+
+.overlay {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10; /* keep above iframe */
+    background: rgba(0, 0, 0, 0.6); /* slightly darker for contrast */
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left-align text */
+    gap: 2px;
+    font-size: 0.85rem; /* slightly smaller */
+}
+
+.top-right .fw-semibold {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.top-right .fw-light {
+    font-weight: 300;
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.85; /* subtle secondary text */
+}
+
+
+.footer-link {
+    display: flex;
+    color: #b0b0b0;
+    text-decoration: none;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.flip i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.flip:hover i {
+    transform: scaleX(-1);
+}
+
+.frost {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-link,
+.nav-link:hover {
+    border: none;
+    padding: 4px 0;
+    background-color: transparent;
+    color: var(--bs-secondary-color);
+}
+
+.nav-link.active {
+    color: var(--text);
+    background-color: var(--accent) !important;
+    border-radius: 7px;
+}
+
+
+.card {
+    background: var(--bg);
+}
+
+/* icons */
+.icon {
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.icon:hover {
+    color: var(--accent) !important;
+    transform: scale(1.1);
+}
+
+/* section padding */
+.section-padding {
+    padding: 48px 0;
+    position: relative;
+}
+
+.chess-board {
+    border: 2px solid #000;
+    border-radius: 8px;
+    background:
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png'),
+        repeating-conic-gradient(#f5e1b9 0 25%, #b58763 0 50%) 50% / 50px 50px;
+    background-blend-mode: multiply;
+}
+
+.wood {
+    background:
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png'),
+        #b58763;
+    background-size: cover;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+/* .chess-board {
+  background:
+    repeating-conic-gradient(
+      color-mix(in srgb, var(--text) 40%, transparent) 0 25%,
+      var(--bg) 0 50%
+    )
+    50% / 50px 50px;
+  transition: background 0.25s ease-in-out;
+}
+
+.chess-board:hover {
+  background:
+    repeating-conic-gradient(
+      color-mix(in srgb, var(--accent) 60%, transparent) 0 25%,
+      var(--bg) 0 50%
+    )
+    50% / 50px 50px;
+}
+
+
+
+.wood {
+    border: 2px solid #000;
+    border-radius: 8px;
+    background-color: var(--bg);
+} */
+
+
+.pulse {
+    display: inline-block;
+    animation: beatPulse 0.6s infinite ease-in-out;
+}
+
+@keyframes beatPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.viewall-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+
+.viewall-link i {
+    transition: all .2s ease;
+}
+
+.viewall-link:hover {
+    color: var(--accent) !important;
+}
+
+.viewall-link:hover i {
+    transform: translateX(2px);
+    color: var(--accent);
+}
+
+.card-hover {
+    border: 3px dotted transparent;
+    box-shadow: var(--bs-box-shadow-sm);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-hover:hover {
+    border-color: var(--accent);
+}
+/* Apply to any element */
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine lines */
+.shine-effect::before,
+.shine-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 20px;             /* thinner line */
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        var(--shine) 50%,  /* subtle white shine */
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    opacity: 0;
+    transition: left 0.6s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Second line slightly offset */
+.shine-effect::after {
+    left: -120%;
+    width: 20px;             /* slightly narrower */
+    transition-delay: 0.1s;  /* staggered movement */
+}
+
+/* Hover animation */
+.shine-effect:hover::before {
+    left: 120%;
+    opacity: 1;
+}
+
+.shine-effect:hover::after {
+    left: 120%;
+    opacity: 1;
+}
+
+
+/* PRIMARY BUTTON */
+.custom-btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    outline: 2px solid var(--accent) !important;
+    border: 2px solid var(--accent) !important;
+    outline-offset: -2px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+    transition: all 200ms ease;
+}
+
+.custom-btn-primary:hover,
+.custom-btn-primary:focus {
+    color: var(--accent);
+    outline: 2px solid var(--accent) !important;
+    outline-offset: -6px !important;
+}
+
+/* SECONDARY BUTTON */
+.custom-btn-secondary {
+    color: var(--bs-secondary-color);
+    outline: 2px solid var(--bs-secondary-color) !important;
+    border: 2px solid var(--bs-secondary-color) !important;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+    outline-offset: -2px;
+    border-radius: 8px;
+    transition: all 200ms ease;
+}
+
+.custom-btn-secondary:hover,
+.custom-btn-secondary:focus {
+    outline: 2px solid var(--bs-secondary-color) !important;
+    outline-offset: -6px !important;
+}
+
+
+
+.image-container {
+    width: 100%;
+    /* max-width: 450px;    */
+    aspect-ratio: 16 / 9;
+    /* Keeps the nice landscape shape */
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensures no overflow ever */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Scales down if too big */
+    transition: transform .4s ease;
+    transform-origin: center;
+}
+
+.card:hover .image-container img {
+    transform: scale(1.02);
+}
+
+.color-fill {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.color-fill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--text);
+    /* dark reveal */
+    transition: left 0.4s ease;
+    z-index: 0;
+}
+
+/* bring all content above the reveal background */
+.color-fill>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* hover → background reveals */
+.color-fill:hover::before {
+    left: 0;
+}
+
+/* flip colors on hover */
+.color-fill:hover p,
+.color-fill:hover h4{
+    color: var(--bg) !important;
+}
+
+
+/* theme transition animation */
+@keyframes circle-reveal {
+    from {
+        clip-path: circle(0px at 100% 0%);
+    }
+
+    to {
+        clip-path: circle(150vmax at 100% 0%);
+    }
+}
+
+::view-transition-new(root) {
+    animation: circle-reveal 0.7s ease-out;
+}
+
+/* form control */
+.form-control {
+    background: var(--bg);
+    transition: all 0.2s;
+}
+
+.form-control:hover {
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+@media (max-width: 800px) {
+
+    :root,
+    :root[data-bs-theme='light'] {
+        --width: 90% !important;
+    }
+
+    .orbit {
+        display: none !important;
+    }
+}
+
+
+
+.orbit-small,
+.orbit-big {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px dotted rgba(var(--bs-secondary-color-rgb), 0.4);
+    position: relative;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+.orbit-big {
+    width: 140px;
+    height: 140px;
+    animation-duration: 10s;
+}
+
+.orbit-small {
+    width: 70px;
+    height: 70px;
+    animation-duration: 5s;
+    animation-direction: reverse;
+}
+
+.orbit-small:hover,
+.orbit-big:hover {
+    animation-play-state: paused;
+}
+
+.orbit-icon {
+    position: absolute;
+    background-color: var(--bg);
+}
+
+/* TOP */
+.i1 {
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* RIGHT */
+.i2 {
+    top: 50%;
+    right: 0%;
+    transform: translate(50%, -50%);
+}
+
+/* BOTTOM */
+.i3 {
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+/* LEFT */
+.i4 {
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

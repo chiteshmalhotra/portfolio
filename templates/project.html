@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text-to-Speech Example</title>
+</head>
+<body>
+    <textarea id="textToSpeak" rows="5" cols="50">Hello, this is a text-to-speech example.</textarea><br>
+    <button id="speakButton">Speak</button>
+
+    <script>
+        const textToSpeak = document.getElementById('textToSpeak');
+        const speakButton = document.getElementById('speakButton');
+
+        speakButton.addEventListener('click', () => {
+            const message = new SpeechSynthesisUtterance(textToSpeak.value);
+            window.speechSynthesis.speak(message);
+        });
+    </script>
+</body>
+</html>
