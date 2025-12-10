@@ -12,37 +12,51 @@
 
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 
+    <!-- devicon -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- map -->
+    <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+
     <!-- custom -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-
-
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
 <body class="bg">
     <!-- TOP NAV -->
-    <nav class="navbar sticky-top bg frost">
-        <div class="main-width mx-auto d-flex align-items-center">
+    <nav class="navbar sticky-top bg-frost">
+        <div class="main-width mx-auto d-flex align-items-center justify-content-between">
 
-            <a class="navbar-brand me-auto" href="{{ url_for('home') }}">
-                <h5 class="fw-semibold">CM</h5>
+            <!-- Brand -->
+            <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">
+                <h5 class="fw-bold mb-0">CM</h5>
             </a>
 
-            <div class="d-flex gap-3">
-                <a id="themeToggle" onclick="toggleTheme()" class="nav-link">
+            <!-- Right Items -->
+            <div class="d-flex align-items-center gap-2">
+
+                <!-- Theme Toggle -->
+                <a id="themeToggle" onclick="toggleTheme()"
+                    class="btn custom-btn-secondary btn-sm d-flex align-items-center">
                     <i class="ph ph-moon fs-5"></i>
                 </a>
-                <a href="{{ url_for('contact') }}" class="nav-link text-accent">
-                    <i class="ph ph-paper-plane-tilt fs-5"></i>
-                </a>
-            </div>
 
+                <!-- Contact Button -->
+                <a href="{{ url_for('contact') }}"
+                    class="btn custom-btn-primary btn-sm d-flex align-items-center gap-1">
+                    <!-- <i class="ph ph-paper-plane-tilt fs-6"></i> -->
+                    Get in touch
+                </a>
+
+            </div>
         </div>
     </nav>
 
+
     <!-- MAIN CONTENT -->
-    <main class="my-5 main-width mx-auto">
+    <main class="my-3 main-width mx-auto">
         {% block content %}{% endblock %}
     </main>
 
@@ -104,14 +118,16 @@
 
                     <a href="{{ links.twitter_url }}" target="_blank" class="footer-link">
                         <i class="ph ph-twitter-logo fs-5"></i>{{ links.twitter }}
-                        <i class="ph ph-copy small text-secondary" onclick="copydetail(event, '{{ links.twitter_url }}')"
-                            data-bs-toggle="tooltip" data-bs-original-title="Click to Copy"></i>
+                        <i class="ph ph-copy small text-secondary"
+                            onclick="copydetail(event, '{{ links.twitter_url }}')" data-bs-toggle="tooltip"
+                            data-bs-original-title="Click to Copy"></i>
                     </a>
 
                     <a href="{{ links.linkedin_url }}" target="_blank" class="footer-link">
                         <i class="ph ph-linkedin-logo fs-5"></i>{{ links.linkedin }}
-                        <i class="ph ph-copy small text-secondary" onclick="copydetail(event, '{{ links.linkedin_url }}')"
-                            data-bs-toggle="tooltip" data-bs-original-title="Click to Copy"></i>
+                        <i class="ph ph-copy small text-secondary"
+                            onclick="copydetail(event, '{{ links.linkedin_url }}')" data-bs-toggle="tooltip"
+                            data-bs-original-title="Click to Copy"></i>
                     </a>
 
                     <a href="{{ links.email_url }}" target="_blank" class="footer-link">

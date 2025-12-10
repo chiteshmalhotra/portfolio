@@ -1,7 +1,13 @@
+// -----------------------
+// BOOTSTRAP TOOLTIPS
+// -----------------------
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-// --- THEME TOGGLE FUNCTION ---
+
+// -----------------------
+// THEME TOGGLE FUNCTION
+// -----------------------
 function toggleTheme() {
     const html = document.documentElement;
     const toggleButton = document.querySelector('[onclick="toggleTheme()"]');
@@ -16,53 +22,97 @@ function toggleTheme() {
             html.setAttribute('data-bs-theme', next);
         });
     }
+
+    // toggle icon (sun/moon)
     const icon = toggleButton ? toggleButton.querySelector('i') : null;
     if (icon) {
         icon.className = next === 'dark'
-            ? 'ph ph-sun fs-4'
-            : 'ph ph-moon fs-4';
+            ? 'ph ph-sun fs-5'
+            : 'ph ph-moon fs-5';
     }
+
+    // update map theme ALSO
+    map.setStyle(getMapStyle(next));
+
     return false;
 }
 
 
+// -----------------------
+// COPY FUNCTION
+// -----------------------
 function copydetail(event, textToCopy) {
     event.preventDefault();
 
-    // Copy the text passed as argument
     navigator.clipboard.writeText(textToCopy);
 
     const el = event.currentTarget;
     const icon = el;
     const originalClass = icon.className;
 
-    // Get or create tooltip instance
+    // get/create tooltip
     const tooltip = bootstrap.Tooltip.getInstance(el) || new bootstrap.Tooltip(el);
 
-    // Update tooltip to "Copied"
+    // change tooltip text
     el.setAttribute("data-bs-original-title", "Copied");
     tooltip.setContent({ '.tooltip-inner': 'Copied' });
     tooltip.show();
 
-    // Change icon temporarily
+    // change icon
     icon.className = "ph ph-check-circle text-success small";
 
-    // Reset after 2 seconds
+    // reset after 2s
     setTimeout(() => {
         tooltip.hide();
-
-        // Reset icon
         icon.className = originalClass;
 
-        // Reset tooltip text
         el.setAttribute("data-bs-original-title", "Click to Copy");
         tooltip.setContent({ '.tooltip-inner': 'Click to Copy' });
+
     }, 2000);
 }
 
 
+// -----------------------
+// SPEAK BUTTON
+// -----------------------
 const speakButton = document.getElementById('speakButton');
 speakButton.addEventListener('click', () => {
     const message = new SpeechSynthesisUtterance("Chitesh Malhotra");
     window.speechSynthesis.speak(message);
 });
+
+
+// -----------------------
+// MAP THEME FUNCTION
+// -----------------------
+function getMapStyle(theme) {
+    return theme === "dark"
+        ? "https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json"
+        : "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+}
+
+
+// -----------------------
+// INITIALIZE MAP
+// -----------------------
+const html = document.documentElement;
+const initialTheme = html.getAttribute("data-bs-theme") || "light";
+
+const map = new maplibregl.Map({
+    container: "map",
+    style: getMapStyle(initialTheme),
+    center: [77.2090, 28.6139],
+    zoom: 11,
+    attributionControl: false
+});
+
+// MARKER
+new maplibregl.Marker()
+    .setLngLat([77.2090, 28.6139])
+    .addTo(map);
+new maplibregl.Marker()
+    .setLngLat([76.93, 28.65])
+    .addTo(map);
+
+    

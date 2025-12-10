@@ -6,6 +6,7 @@
     --text: white;
     --accent: var(--bs-warning);
     --shine:rgba(255,255,255,0.4);
+    --muted:var(--bs-secondary);
 }
 
 /* LIGHT THEME */
@@ -24,6 +25,11 @@ h1, h2, h3, h4 {
     font-family: 'Fira Code', monospace;
 } */
 
+#map {
+    width: 100%;
+    height: 160px; /* change as you want */
+    border-radius: 10px;
+}
 
 
 ::selection {
@@ -51,7 +57,7 @@ h1, h2, h3, h4 {
 .link-underline {
     color: var(--text);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 200ms ease;
 }
 
 .link-underline:hover {
@@ -64,14 +70,24 @@ h1, h2, h3, h4 {
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    font-style: bold;
-    border: 3px dotted var(--accent);
+    font-weight: 600;
+    border: 3px dotted var(--text);
     border-radius: 10px;
     padding: 0 5px 0 5px;
     line-height: 1.2;
-    /* text-decoration: underline var(--accent) 2px !important; */
+    transition: all 200ms ease;
+}
+.core-skill:hover{
+    color: var(--bg);
+    background-color: var(--text);
+}
+.core-skill i{
+    transition: all 200ms ease;
 }
 
+.core-skill:hover i{
+    color: var(--bg) !important;
+}
 .overlay {
     position: relative;
     text-align: center;
@@ -83,19 +99,14 @@ h1, h2, h3, h4 {
 
 .top-right {
     position: absolute;
-    top: 8px;
+    top: 4px;
     right: 8px;
-    z-index: 10; /* keep above iframe */
-    background: rgba(0, 0, 0, 0.6); /* slightly darker for contrast */
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10; 
+    color: var(--text);
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* left-align text */
-    gap: 2px;
-    font-size: 0.85rem; /* slightly smaller */
+    align-items: flex-end; 
+    font-size: 0.85rem;
 }
 
 .top-right .fw-semibold {
@@ -107,9 +118,8 @@ h1, h2, h3, h4 {
     font-weight: 300;
     font-size: 0.75rem;
     margin: 0;
-    opacity: 0.85; /* subtle secondary text */
+    opacity: 0.85;
 }
-
 
 .footer-link {
     display: flex;
@@ -117,42 +127,18 @@ h1, h2, h3, h4 {
     text-decoration: none;
     align-items: center;
     gap: 6px;
-    transition: all 0.2s ease;
+    transition: all 200ms ease;
 }
 
 .footer-link:hover {
     color: white;
 }
 
-.flip i {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.flip:hover i {
-    transform: scaleX(-1);
-}
-
-.frost {
+.bg-frost {
     backdrop-filter: blur(20px);
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-.nav-link,
-.nav-link:hover {
-    border: none;
-    padding: 4px 0;
-    background-color: transparent;
-    color: var(--bs-secondary-color);
-}
-
-.nav-link.active {
-    color: var(--text);
-    background-color: var(--accent) !important;
-    border-radius: 7px;
-}
-
 
 .card {
     background: var(--bg);
@@ -161,7 +147,7 @@ h1, h2, h3, h4 {
 /* icons */
 .icon {
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 200ms ease;
 }
 
 .icon:hover {
@@ -261,7 +247,7 @@ h1, h2, h3, h4 {
 }
 
 .card-hover {
-    border: 3px dotted transparent;
+    border: 1px solid transparent;
     box-shadow: var(--bs-box-shadow-sm);
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
@@ -314,11 +300,16 @@ h1, h2, h3, h4 {
     opacity: 1;
 }
 
+.shine-effect:not(:hover)::before,
+.shine-effect:not(:hover)::after {
+    transition: none;
+}
 
 /* PRIMARY BUTTON */
 .custom-btn-primary {
     background: var(--accent);
     color: var(--bg);
+    font-weight: bold;
     outline: 2px solid var(--accent) !important;
     border: 2px solid var(--accent) !important;
     outline-offset: -2px;
@@ -336,9 +327,9 @@ h1, h2, h3, h4 {
 
 /* SECONDARY BUTTON */
 .custom-btn-secondary {
-    color: var(--bs-secondary-color);
-    outline: 2px solid var(--bs-secondary-color) !important;
-    border: 2px solid var(--bs-secondary-color) !important;
+    color: var(--bs-secondary);
+    outline: 2px solid var(--bs-secondary) !important;
+    border: 2px solid var(--bs-secondary) !important;
     box-shadow: 0 3px 5px rgba(0,0,0,0.25);
     outline-offset: -2px;
     border-radius: 8px;
@@ -347,7 +338,7 @@ h1, h2, h3, h4 {
 
 .custom-btn-secondary:hover,
 .custom-btn-secondary:focus {
-    outline: 2px solid var(--bs-secondary-color) !important;
+    outline: 2px solid var(--bs-secondary) !important;
     outline-offset: -6px !important;
 }
 
@@ -436,7 +427,7 @@ h1, h2, h3, h4 {
 /* form control */
 .form-control {
     background: var(--bg);
-    transition: all 0.2s;
+    transition: all 200ms;
 }
 
 .form-control:hover {
@@ -470,7 +461,7 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 3px dotted rgba(var(--bs-secondary-color-rgb), 0.4);
+    border: 3px dotted rgba(var(--bs-secondary-rgb), 0.4);
     position: relative;
     animation-name: spin;
     animation-timing-function: linear;
@@ -533,4 +524,13 @@ h1, h2, h3, h4 {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* map */
+.airport {
+  height: 69px;
+  width: 47px;
+  background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&scaleFactor=2&color=%2372a2d4&size=x-large&icon=plane-departure&apiKey=YOUR_API_KEY);
+  background-size: contain;
+  cursor: pointer;
 }

@@ -2,81 +2,88 @@
 {% block content %}
 
 <section class="section-padding">
-    <div class="overlay mb-1">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08623985283!2d76.89714193692976!3d28.526996117504968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1765307986040!5m2!1sen!2sin"
-            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" class="rounded-3"></iframe>
 
-        <div class="top-right">
-            <p class="fw-semibold mb-0 font-monospace">New Delhi,India</p>
-            <p class="fw-light small mb-0 text-start font-monospace"><i class="ph ph-clock small"></i> GMT +5:30</p>
-        </div>
-    </div>
-    <div class="d-flex flex-column gap-3 ">
-        <div>
-            <!-- <h4 class="text-muted mb-0">Namaste, I'm </h4> -->
-            <div class="d-flex flex-wrap align-items-center gap-1">
-                <h1 class="fw-semibold mb-0" id="textToSpeak">Chitesh Malhotra</h1>
-                <a id="speakButton" class="pt-2 text-decoration-none text-muted"><i
-                        class="ph ph-speaker-high fs-5"></i></a>
-                <!-- <div class="badge rounded-pill border text-muted my-auto"><span class="text-success">⦿</span> Open to
-                    work</div> -->
+    <div class="d-flex flex-column gap-4">
+
+        <!-- Map + Top Right Info -->
+        <div class="position-relative">
+            <div id="map"></div>
+
+            <div class="top-right">
+                <p class="small mb-0 font-monospace d-flex align-items-center gap-1">
+                    <i class="ph ph-map-pin"></i> New Delhi, India
+                </p>
+                <p class="small mb-0 font-monospace d-flex align-items-center gap-1">
+                    <i class="ph ph-clock"></i> GMT +5:30
+                </p>
             </div>
         </div>
 
-        <div>
-            <p class="lead mb-1 fw-muted">
-                I am a <span class="fw-semibold">Data Scientist</span> who transforms data into clear, actionable
-                insights using
-                <span class="core-skill">
-                    {{ stack["python"]|safe }} Python
-                </span>
-                ,
-                <span class="core-skill">
-                    {{ stack["sql"]|safe }} SQL
-                </span>
-                and
-                <span class="core-skill">
-                    {{ stack["github"]|safe }} GitHub
-                </span>.
+        <!-- Name + Intro -->
+        <div class="d-flex flex-column">
+            <div class="d-flex align-items-center flex-wrap gap-2 row-gap-0 mb-1">
+                <h1 class="fw-semibold mb-0" id="textToSpeak">Chitesh Malhotra</h1>
+                <h1 class="fw-semibold mb-0 text-secondary">- Data Scientist</h1>
+                <a id="speakButton" class="pt-2 text-decoration-none text-muted">
+                    <i class="ph ph-speaker-high fs-5"></i>
+                </a>
+            </div>
+
+            <p class="lead fw-muted mb-0">
+                I transforms data into actionable insights using
+                <span class="core-skill">{{ stack["python"]|safe }} Python</span>,
+                <span class="core-skill">{{ stack["pandas"]|safe }} Pandas</span> and
+                
+                <span class="core-skill">{{ stack["sql"]|safe }} SQL</span>.
                 I am currently expanding my expertise into modern web development.
             </p>
-
         </div>
 
-        <div class="d-flex gap-3">
-            <a href="{{ url_for('static', filename='media/chitesh_malhotra.pdf') }}"
-                class="btn custom-btn-secondary d-flex align-items-center gap-1 fs-5">
-                <i class="ph ph-user"></i>
-                Resume
-            </a>
-            <a href="{{ url_for('contact')}}"
-                class="btn custom-btn-primary d-flex align-items-center gap-1 fs-5 fw-semibold">
-                <i class="ph ph-paper-plane-tilt"></i>
-                Get in touch</a>
-        </div>
-        <div class="d-flex gap-3">
-            <a href="{{ links.github_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" data-bs-title="{{ links.github }}">
-                <i class="ph ph-github-logo"></i>
-            </a>
-            <a href="{{ links.linkedin_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" data-bs-title="{{ links.linkedin }}">
-                <i class="ph ph-linkedin-logo"></i>
-            </a>
-            <a href="{{ links.twitter_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" data-bs-title="{{ links.twitter }}">
-                <i class="ph ph-twitter-logo"></i>
-            </a>
-            <a href="{{ links.email_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" data-bs-title="{{ links.email }}">
-                <i class="ph ph-envelope-simple"></i>
-            </a>
+        <!-- Buttons -->
+        <div class="d-flex flex-column gap-2">
+
+            <div class="d-flex gap-3 flex-wrap">
+                <a href="{{ url_for('static', filename='media/chitesh_malhotra.pdf') }}"
+                   class="btn custom-btn-secondary d-flex align-items-center gap-1 fs-5">
+                    <i class="ph ph-user"></i> Resume
+                </a>
+
+                <a href="{{ url_for('contact') }}"
+                   class="btn custom-btn-primary d-flex align-items-center gap-1 fs-5 fw-semibold">
+                    <i class="ph ph-paper-plane-tilt"></i> Get in touch
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="d-flex gap-3 flex-wrap">
+                <a href="{{ links.github_url }}" target="_blank" class="icon text-muted fs-4"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ links.github }}">
+                    <i class="ph ph-github-logo"></i>
+                </a>
+
+                <a href="{{ links.linkedin_url }}" target="_blank" class="icon text-muted fs-4"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ links.linkedin }}">
+                    <i class="ph ph-linkedin-logo"></i>
+                </a>
+
+                <a href="{{ links.twitter_url }}" target="_blank" class="icon text-muted fs-4"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ links.twitter }}">
+                    <i class="ph ph-twitter-logo"></i>
+                </a>
+
+                <a href="{{ links.email_url }}" target="_blank" class="icon text-muted fs-4"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ links.email }}">
+                    <i class="ph ph-envelope-simple"></i>
+                </a>
+            </div>
+
         </div>
     </div>
 
-    <!-- <div class="pt-3 mx-auto orbit">
+</section>
+
+
+<!-- <div class="pt-3 mx-auto orbit">
             <div class="orbit-big">
                 <i class="devicon-docker-plain text-warning orbit-icon fs-4 i1"></i>
                 <i class="devicon-numpy-plain colored orbit-icon fs-4 i2"></i>
@@ -88,7 +95,6 @@
                 </div>
             </div>
         </div> -->
-</section>
 
 <section class="section-padding">
     <div class="d-flex align-items-bottom">
@@ -175,7 +181,7 @@
                     building data analysis.
                 </p>
 
-                <p class="fw-semibold mb-1">Skills</p>
+                <p class="fw-semibold mb-1 mt-auto">Skills</p>
                 <div class="d-flex align-items-center flex-wrap gap-2 justify-content-start justify-content-md-start">
                     {% for skill,value in stack.items() %}
                     <div class="d-flex align-items-center gap-1 border rounded-2 px-2 py-1 shine-effect">
