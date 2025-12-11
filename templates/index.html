@@ -9,12 +9,14 @@
         <div class="position-relative">
             <div id="map"></div>
 
-            <div class="top-right">
-                <p class="small mb-0 font-monospace d-flex align-items-center gap-1">
-                    <i class="ph ph-map-pin"></i> New Delhi, India
+            <div class="top-right"data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="My local area time :D">
+                <div class="d-flex align-items-center gap-1"><i class="ph ph-clock fs-5"></i>
+                <h6 class="font-monospace mb-0" id="clock"></h6></div>
+                <p class="text-secondary small mb-0 font-monospace">
+                    New Delhi,India
                 </p>
-                <p class="small mb-0 font-monospace d-flex align-items-center gap-1">
-                    <i class="ph ph-clock"></i> GMT +5:30
+                <p class="text-secondary small mb-0 font-monospace">
+                    GMT +5:30
                 </p>
             </div>
         </div>
@@ -22,14 +24,14 @@
         <!-- Name + Intro -->
         <div class="d-flex flex-column">
             <div class="d-flex align-items-center flex-wrap gap-2 row-gap-0 mb-1">
-                <h1 class="fw-semibold mb-0" id="textToSpeak">Chitesh Malhotra</h1>
-                <h1 class="fw-semibold mb-0 text-secondary">- Data Scientist</h1>
+                <h2 class="fw-semibold mb-0" id="textToSpeak">Chitesh Malhotra</h2>
+                <h2 class="fw-semibold mb-0 text-secondary">- Data Scientist</h2>
                 <a id="speakButton" class="pt-2 text-decoration-none text-muted">
                     <i class="ph ph-speaker-high fs-5"></i>
                 </a>
             </div>
 
-            <p class="lead fw-muted mb-0">
+            <p class="lead text-muted mb-0">
                 I transforms data into actionable insights using
                 <span class="core-skill">{{ stack["python"]|safe }} Python</span>,
                 <span class="core-skill">{{ stack["pandas"]|safe }} Pandas</span> and
@@ -124,10 +126,10 @@
 
 
                 <!-- Right Content -->
-                <div class="d-flex flex-column gap-3">
+                <div class="d-flex flex-column gap-2">
                     <div>
-                        <div class="d-flex align-items-top mb-1">
-                            <h4 class="fw-bold mb-0 me-auto">{{ project.title }}</h4>
+                        <div class="d-flex align-items-top mb-0">
+                            <h4 class="fw-semibold mb-0 me-auto">{{ project.title }}</h4>
                             <i class="ph ph-push-pin fs-5"></i>
                         </div>
 
