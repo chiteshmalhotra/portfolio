@@ -78,16 +78,16 @@ h1, h2, h3, h4 {
     transition: all 200ms ease;
 }
 .core-skill:hover{
-    color: var(--bg);
-    border-color: var(--text) !important;
-    background-color: var(--text);
+    border-color: var(--accent) !important;
 }
+
 .core-skill i{
+    color: var(--text) !important;
     transition: all 200ms ease;
 }
 
 .core-skill:hover i{
-    color: var(--bg) !important;
+    color: var(--accent) !important;
 }
 .overlay {
     position: relative;
@@ -244,7 +244,7 @@ h1, h2, h3, h4 {
 
 .card-hover:hover {
     border-color: var(--accent);
-    background-color: oklab(0.204404 0.0000931323 0.00000409782 / 0.03);
+    /* background-color: oklab(0.204404 0.0000931323 0.00000409782 / 0.03); */
 }
 
 /* Apply to any element */
@@ -300,11 +300,11 @@ h1, h2, h3, h4 {
 .custom-btn-primary {
     background: var(--accent);
     color: var(--bg);
-    font-weight: bold;
+    /* font-weight: bold; */
     outline: 2px solid var(--accent) !important;
     border: 2px solid var(--accent) !important;
     outline-offset: -2px;
-    border-radius: 10px;
+    border-radius: var(--bs-border-radius);
     box-shadow: 0 3px 5px rgba(0,0,0,0.25);
     transition: all 200ms ease;
 }
@@ -324,7 +324,7 @@ h1, h2, h3, h4 {
     border: 2px solid var(--bs-secondary) !important;
     box-shadow: 0 3px 5px rgba(0,0,0,0.25);
     outline-offset: -2px;
-    border-radius: 10px;
+    border-radius: var(--bs-border-radius);
     transition: all 200ms ease;
 }
 
@@ -334,10 +334,14 @@ h1, h2, h3, h4 {
     outline-offset: -6px !important;
 }
 
+.btn-sm{
+    box-shadow: var(--bs-box-shadow-sm);
+}
+
 .image-container {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #000;
+    background: red;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
