@@ -27,25 +27,31 @@
 <body class="bg">
     <!-- TOP NAV -->
     <nav class="navbar sticky-top bg-frost">
-        <div class="main-width mx-auto d-flex align-items-center justify-content-between">
+        <div class="main-width mx-auto d-flex align-items-center justify-content-between position-relative">
 
             <!-- Brand -->
-            <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">
-                <h5 class="fw-bold mb-0">CM</h5>
+            <a class="" href="{{ url_for('home') }}">
+                <div class="overlay-wrap me-2">
+                    <img src="{{ url_for('static', filename='media/thumbnails/profile.png') }}" class="profile-size" />
+                    <img src="{{ url_for('static', filename='media/thumbnails/profile_hover.png') }}"
+                        class="overlay profile-size" />
+                </div>
+                <!-- <img class="profile-img" src="{{ url_for('static', filename='media/thumbnails/profile.png') }}">
+                <img class="profile-img profile-img-top"
+                    src="{{ url_for('static', filename='media/thumbnails/profile_hover.png') }}"> -->
+                <!-- <h5 class="fw-bold mb-0">CM</h5> -->
             </a>
 
             <!-- Right Items -->
             <div class="d-flex align-items-center gap-3">
 
                 <!-- Theme Toggle -->
-                <a id="themeToggle" onclick="toggleTheme()"
-                    class="nav-link">
+                <a id="themeToggle" onclick="toggleTheme()" class="nav-link">
                     <i class="ph ph-moon fs-5"></i>
                 </a>
 
                 <!-- Contact Button -->
-                <a href="{{ url_for('contact') }}"
-                    class="nav-link text-accent">
+                <a href="{{ url_for('contact') }}" class="nav-link text-accent">
                     <i class="ph ph-paper-plane-tilt fs-5"></i>
                 </a>
 
@@ -84,6 +90,11 @@
                     <div class="badge rounded-pill border footer-link"><i class="ph ph-map-pin"></i>New Delhi, India
                     </div>
                 </div>
+                <a href="{{ url_for('static', filename='media/chitesh_malhotra.pdf') }}" target="_blank"
+                    class="badge rounded-pill border footer-link mt-2">
+                    <i class="ph ph-user"></i>
+                    Open Resume
+                </a>
             </div>
 
             <!-- Middle -->
@@ -109,31 +120,43 @@
             <div>
                 <p class="fw-semibold mb-2">Socials</p>
                 <div class="d-flex flex-column gap-2">
-                    <a href="{{ links.github_url }}" target="_blank" class="footer-link">
-                        <i class="ph ph-github-logo fs-5"></i>{{ links.github }}
-                        <i class="ph ph-copy small text-secondary" onclick="copydetail(event, '{{ links.github_url }}')"
+                    <!-- GitHub -->
+                    <div class="footer-link">
+                        <a href="{{ links.github_url }}" target="_blank" class="footer-link">
+                            <i class="ph ph-github-logo fs-5"></i>{{ links.github }}
+                        </a>
+                        <i class="ph ph-copy text-secondary" onclick="copydetail(event, '{{ links.github_url }}')"
                             data-bs-toggle="tooltip" data-bs-original-title="Click to Copy"></i>
-                    </a>
+                    </div>
 
-                    <a href="{{ links.twitter_url }}" target="_blank" class="footer-link">
-                        <i class="ph ph-twitter-logo fs-5"></i>{{ links.twitter }}
-                        <i class="ph ph-copy small text-secondary"
+                    <!-- Twitter -->
+                    <div class="footer-link">
+                        <a href="{{ links.twitter_url }}" target="_blank" class="footer-link">
+                            <i class="ph ph-twitter-logo fs-5"></i>{{ links.twitter }}
+                        </a>
+                        <i class="ph ph-copy text-secondary"
                             onclick="copydetail(event, '{{ links.twitter_url }}')" data-bs-toggle="tooltip"
                             data-bs-original-title="Click to Copy"></i>
-                    </a>
+                    </div>
 
-                    <a href="{{ links.linkedin_url }}" target="_blank" class="footer-link">
-                        <i class="ph ph-linkedin-logo fs-5"></i>{{ links.linkedin }}
-                        <i class="ph ph-copy small text-secondary"
+                    <!-- LinkedIn -->
+                    <div class="footer-link">
+                        <a href="{{ links.linkedin_url }}" target="_blank" class="footer-link">
+                            <i class="ph ph-linkedin-logo fs-5"></i>{{ links.linkedin }}
+                        </a>
+                        <i class="ph ph-copy text-secondary"
                             onclick="copydetail(event, '{{ links.linkedin_url }}')" data-bs-toggle="tooltip"
                             data-bs-original-title="Click to Copy"></i>
-                    </a>
+                    </div>
 
-                    <a href="{{ links.email_url }}" target="_blank" class="footer-link">
-                        <i class="ph ph-envelope-simple fs-5"></i>{{ links.email }}
-                        <i class="ph ph-copy small text-secondary" onclick="copydetail(event, '{{ links.email }}')"
+                    <!-- Email -->
+                    <div class="footer-link">
+                        <a href="{{ links.email_url }}" target="_blank" class="footer-link">
+                            <i class="ph ph-envelope-simple fs-5"></i>{{ links.email }}
+                        </a>
+                        <i class="ph ph-copy text-secondary" onclick="copydetail(event, '{{ links.email }}')"
                             data-bs-toggle="tooltip" data-bs-original-title="Click to Copy"></i>
-                    </a>
+                    </div>
                 </div>
             </div>
 

@@ -87,9 +87,9 @@ speakButton.addEventListener('click', () => {
 // MAP THEME FUNCTION
 // -----------------------
 function getMapStyle(theme) {
-    return theme === "dark"
-        ? "https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json"
-        : "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+    return theme === "light"
+        ? "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+        : "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 }
 
 

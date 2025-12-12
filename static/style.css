@@ -1,12 +1,13 @@
 /* BASE THEME VARIABLES */
 :root {
     --width: 700px;
+    --bs-warning: #f3b602;
 
     --bg: #000;
     --text: white;
     --accent: var(--bs-warning);
-    --shine:rgba(255,255,255,0.4);
-    --muted:var(--bs-secondary);
+    --shine: rgba(255, 255, 255, 0.4);
+    --muted: var(--bs-secondary);
 }
 
 /* LIGHT THEME */
@@ -14,8 +15,9 @@
     --bg: white;
     --text: black;
     --accent: var(--bs-success);
-    --shine:rgba(155, 155, 155, 0.4);
+    --shine: rgba(155, 155, 155, 0.4);
 }
+
 /* @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 h1, h2, h3, h4 {
   font-family: 'Fira Code', monospace;
@@ -27,15 +29,15 @@ h1, h2, h3, h4 {
 
 #map {
     width: 100%;
-    height: 160px; /* change as you want */
+    height: 150px;
     border-radius: 10px;
 }
 
-
 ::selection {
-  color: var(--bg);
-  background-color: var(--accent);
+    color: var(--bg);
+    background-color: var(--accent);
 }
+
 /* helper */
 .main-width {
     max-width: var(--width);
@@ -47,7 +49,7 @@ h1, h2, h3, h4 {
 }
 
 .text-accent {
-    color: var(--accent);
+    color: var(--accent) !important;
 }
 
 .text-normal {
@@ -66,7 +68,7 @@ h1, h2, h3, h4 {
     text-underline-offset: 3px;
 }
 
-.core-skill{
+.core-skill {
     display: inline-flex;
     align-items: center;
     gap: 3px;
@@ -77,18 +79,19 @@ h1, h2, h3, h4 {
     line-height: 1.2;
     transition: all 200ms ease;
 }
-.core-skill:hover{
+
+.core-skill:hover {
     border-color: var(--accent) !important;
 }
 
 .core-skill i{
-    color: var(--text) !important;
     transition: all 200ms ease;
 }
 
-.core-skill:hover i{
+.core-skill:hover i {
     color: var(--accent) !important;
 }
+
 .overlay {
     position: relative;
     text-align: center;
@@ -102,11 +105,11 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 4px;
     right: 8px;
-    z-index: 10; 
+    z-index: 10;
     color: var(--text);
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
+    align-items: flex-end;
     font-size: 0.85rem;
 }
 
@@ -116,6 +119,7 @@ h1, h2, h3, h4 {
     text-decoration: none;
     align-items: center;
     gap: 6px;
+    max-width: fit-content;
     transition: all 200ms ease;
 }
 
@@ -146,7 +150,7 @@ h1, h2, h3, h4 {
 
 /* section padding */
 .section-padding {
-    padding: 48px 0;
+    padding: 60px 0;
     position: relative;
 }
 
@@ -216,6 +220,7 @@ h1, h2, h3, h4 {
 }
 
 .viewall-link {
+    color: var(--muted);
     display: inline-flex;
     align-items: center;
     text-decoration: none;
@@ -223,6 +228,8 @@ h1, h2, h3, h4 {
 }
 
 .viewall-link i {
+    color: var(--muted);
+    padding-left: 2px;
     transition: all .2s ease;
 }
 
@@ -260,14 +267,14 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 20px;             /* thinner line */
+    width: 20px;
+    /* thinner line */
     height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent 0%,
-        var(--shine) 50%,  /* subtle white shine */
-        transparent 100%
-    );
+    background: linear-gradient(120deg,
+            transparent 0%,
+            var(--shine) 50%,
+            /* subtle white shine */
+            transparent 100%);
     transform: skewX(-20deg);
     opacity: 0;
     transition: left 0.6s ease, opacity 0.3s ease;
@@ -276,8 +283,8 @@ h1, h2, h3, h4 {
 
 .shine-effect::after {
     left: -120%;
-    width: 20px;            
-    transition-delay: 0.1s; 
+    width: 20px;
+    transition-delay: 0.1s;
 }
 
 /* Hover animation */
@@ -296,16 +303,17 @@ h1, h2, h3, h4 {
     transition: none;
 }
 
+
 /* PRIMARY BUTTON */
 .custom-btn-primary {
     background: var(--accent);
     color: var(--bg);
-    /* font-weight: bold; */
+    font-weight: 500;
     outline: 2px solid var(--accent) !important;
     border: 2px solid var(--accent) !important;
     outline-offset: -2px;
     border-radius: var(--bs-border-radius);
-    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.20);
     transition: all 200ms ease;
 }
 
@@ -320,9 +328,10 @@ h1, h2, h3, h4 {
 /* SECONDARY BUTTON */
 .custom-btn-secondary {
     color: var(--bs-secondary);
+    font-weight: 500;
     outline: 2px solid var(--bs-secondary) !important;
     border: 2px solid var(--bs-secondary) !important;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.20);
     outline-offset: -2px;
     border-radius: var(--bs-border-radius);
     transition: all 200ms ease;
@@ -334,14 +343,15 @@ h1, h2, h3, h4 {
     outline-offset: -6px !important;
 }
 
-.btn-sm{
-    box-shadow: var(--bs-box-shadow-sm);
+.btn-sm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
 }
+
 
 .image-container {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: red;
+    background: black;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -394,7 +404,7 @@ h1, h2, h3, h4 {
 
 /* flip colors on hover */
 .color-fill:hover p,
-.color-fill:hover h4{
+.color-fill:hover h4 {
     color: var(--bg) !important;
 }
 
@@ -516,11 +526,29 @@ h1, h2, h3, h4 {
     }
 }
 
-/* map */
-.airport {
-  height: 69px;
-  width: 47px;
-  background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&scaleFactor=2&color=%2372a2d4&size=x-large&icon=plane-departure&apiKey=YOUR_API_KEY);
-  background-size: contain;
-  cursor: pointer;
+.map-profile-container {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.overlay-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.overlay-wrap:hover .overlay {
+  opacity: 1;
+}
+
+.profile-size{
+    width: 30px;
 }
