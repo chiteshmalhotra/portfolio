@@ -120,9 +120,12 @@
             <a href="{{ project.url }}" class="stretched-link"></a>
             <div class="d-flex align-items-top mb-0">
                 <h4 class="fw-semibold me-auto ">{{ project.title }}</h4>
-                <div class="badge rounded-pill border px-2 py-1 shine-effect mb-auto me-2 fw-semibold
-                {% if project.state == 'Completed' %}border-success text-success{% else %}border-warning text-warning{% endif %}"
+                <div class="badge rounded-pill border px-2 py-1 shine-effect mb-auto me-2 fw-semibold d-flex gap-1 align-items-center text-normal
+                {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}"
                     style="z-index: 5;">
+                    <div
+                        class="{% if project.state == 'Completed' %}dot bg-success{% else %}pulse-dot bg-warning{% endif %}">
+                    </div>
                     {{ project.state }}
                 </div>
 
@@ -199,7 +202,7 @@
                     Always open to interesting projects & conversations.
                 </p>
                 <a href="{{ url_for('contact') }}" target="_blank"
-                   class="btn custom-btn-primary btn-sm d-flex align-items-center gap-2 justify-content-center mt-auto">
+                    class="btn custom-btn-primary btn-sm d-flex align-items-center gap-2 justify-content-center mt-auto">
                     <i class="ph ph-paper-plane-tilt"></i>
                     Get in touch
                 </a>
@@ -220,9 +223,8 @@
                 <p class="text-muted small mb-3">
                     Chess is my addiction and I’m deep into it.
                 </p>
-                <a href="https://www.chess.com/member/chitesh_malhotra"
-                   target="_blank"
-                   class="btn custom-btn-primary btn-sm d-flex align-items-center justify-content-center gap-2 mt-auto">
+                <a href="https://www.chess.com/member/chitesh_malhotra" target="_blank"
+                    class="btn custom-btn-primary btn-sm d-flex align-items-center justify-content-center gap-2 mt-auto">
                     <i class="ph ph-play"></i> Play
                 </a>
             </div>
@@ -246,6 +248,8 @@
         </div>
     </div>
 
+    <!-- <div class="disc"><i class="ph ph-vinyl-record fs-1"></i>
+    </div> -->
 </section>
 
 {% endblock %}

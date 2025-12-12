@@ -19,6 +19,8 @@
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
     <!-- custom -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
@@ -36,10 +38,6 @@
                     <img src="{{ url_for('static', filename='media/thumbnails/profile_hover.png') }}"
                         class="overlay profile-size" />
                 </div>
-                <!-- <img class="profile-img" src="{{ url_for('static', filename='media/thumbnails/profile.png') }}">
-                <img class="profile-img profile-img-top"
-                    src="{{ url_for('static', filename='media/thumbnails/profile_hover.png') }}"> -->
-                <!-- <h5 class="fw-bold mb-0">CM</h5> -->
             </a>
 
             <!-- Right Items -->
@@ -85,7 +83,7 @@
                     © 2026 · Built and designed with <i class="ph ph-heart text-danger"></i> by me.
                 </p>
                 <div class="d-flex gap-2">
-                    <div class="badge rounded-pill border footer-link"><span class="text-success">⦿</span> Open to
+                    <div class="badge rounded-pill border footer-link"><div class="pulse-dot bg-success"></div> Open to
                         work</div>
                     <div class="badge rounded-pill border footer-link"><i class="ph ph-map-pin"></i>New Delhi, India
                     </div>
