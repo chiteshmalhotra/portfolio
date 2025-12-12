@@ -1,11 +1,11 @@
 /* BASE THEME VARIABLES */
 :root {
     --width: 700px;
-    --bs-warning: #f3b602;
 
     --bg: #000;
     --text: white;
-    --accent: var(--bs-warning);
+    --accent: #209fb5;
+
     --shine: rgba(255, 255, 255, 0.4);
     --muted: var(--bs-secondary);
 }
@@ -14,18 +14,21 @@
 :root[data-bs-theme='light'] {
     --bg: white;
     --text: black;
-    --accent: var(--bs-success);
+    --accent: #209fb5;
     --shine: rgba(155, 155, 155, 0.4);
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-h1, h2, h3, h4 {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+h1, h2, h3, h4, h5 {
   font-family: 'Fira Code', monospace;
 }
-
+p {
+    font-family: sans-serif;
+}
 .my-font{
     font-family: 'Fira Code', monospace;
-} */
+}
 
 #map {
     width: 100%;
@@ -128,7 +131,7 @@ h1, h2, h3, h4 {
 }
 
 .bg-frost {
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px);
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -327,7 +330,7 @@ h1, h2, h3, h4 {
 
 /* SECONDARY BUTTON */
 .custom-btn-secondary {
-    color: var(--bs-secondary);
+    color: var(--text);
     font-weight: 500;
     outline: 2px solid var(--bs-secondary) !important;
     border: 2px solid var(--bs-secondary) !important;

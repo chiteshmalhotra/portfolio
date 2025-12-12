@@ -43,14 +43,14 @@
     }
   ],
   "stack": {
-  "python": "<i class=\"devicon-python-plain text-primary fs-5 \"></i>",
-  "numpy": "<i class=\"devicon-numpy-plain colored fs-5 \"></i>",
-  "pandas": "<i class=\"devicon-pandas-plain fs-5 \"></i>",
-  "matplotlib": "<i class=\"devicon-matplotlib-plain fs-5 \"></i>",
-  "bootstrap": "<i class=\"devicon-bootstrap-plain colored fs-5 \"></i>",
-  "flask": "<i class=\"devicon-flask-original fs-5 \"></i>",
-  "sql": "<i class=\"devicon-azuresqldatabase-plain colored fs-5 \"></i>",
-  "github": "<i class=\"devicon-github-original fs-5 \"></i>"
+  "python": "<i class=\"devicon-python-plain text-primary\"></i>",
+  "numpy": "<i class=\"devicon-numpy-plain colored\"></i>",
+  "pandas": "<i class=\"devicon-pandas-plain text-danger\"></i>",
+  "matplotlib": "<i class=\"devicon-matplotlib-plain text-warning\"></i>",
+  "bootstrap": "<i class=\"devicon-bootstrap-plain colored\"></i>",
+  "flask": "<i class=\"devicon-flask-original text-primary\"></i>",
+  "sql": "<i class=\"devicon-azuresqldatabase-plain colored\"></i>",
+  "github": "<i class=\"devicon-github-original\"></i>"
 }
 
 }
