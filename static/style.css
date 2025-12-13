@@ -311,10 +311,10 @@ p {
 
 /* SECONDARY BUTTON */
 .custom-btn-secondary {
-    color: var(--text);
+    color: var(--muted);
     font-weight: 500;
-    outline: 2px solid var(--bs-secondary) !important;
-    border: 2px solid var(--bs-secondary) !important;
+    outline: 2px solid var(--muted) !important;
+    border: 2px solid var(--muted) !important;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.20);
     outline-offset: -2px;
     border-radius: var(--bs-border-radius);
@@ -323,7 +323,7 @@ p {
 
 .custom-btn-secondary:hover,
 .custom-btn-secondary:focus {
-    outline: 2px solid var(--bs-secondary) !important;
+    outline: 2px solid var(--muted) !important;
     outline-offset: -6px !important;
 }
 
