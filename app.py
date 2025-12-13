@@ -21,10 +21,11 @@ def contact():
 
 @app.route('/projects')
 def projects():
-    return render_template('project.html',links=links)
+    return render_template('project.html',links=links,projects_data=projects_data)
 
 @app.route('/resume')
 def resume():
     return render_template('resume.html',links=links)
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -117,7 +117,7 @@
         <div class="card p-3 rounded-3 position-relative card-hover">
 
             <!-- Full-card clickable -->
-            <a href="{{ project.url }}" class="stretched-link"></a>
+            <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
             <div class="d-flex align-items-top mb-0">
                 <h4 class="fw-semibold me-auto ">{{ project.title }}</h4>
                 <div class="badge rounded-pill border px-2 py-1 shine-effect mb-auto me-2 fw-semibold d-flex gap-1 align-items-center text-normal
@@ -238,7 +238,7 @@
                 </div>
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     {% for skill, value in stack.items() %}
-                    <div class="d-flex align-items-center gap-1 border rounded-2 px-2 py-1 shine-effect">
+                    <div class="d-flex align-items-center gap-1 border rounded-2 px-1 shine-effect">
                         <div class="fs-5">{{ value|safe }}</div>
                         <span class="fw-medium">{{ skill|capitalize }}</span>
                     </div>

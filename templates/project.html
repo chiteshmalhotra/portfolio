@@ -1,4 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
+<section class="section-padding">
+    <h1 class="text-center">Projects</h1>
+    <p class="lead text-center">Things i have build. One project at a time.</p>
+    <hr class="my-4">
+    <div class="row g-3">
+        {% for project in projects_data %}
+        <div class="col-12 col-md-6">
+            <!-- Full-card clickable -->
+            <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
+            <div class="card h-100 shadow-sm card-hover">
+
+                <img src="{{ url_for('static', filename=project.image) }}" class="card-img-top project-img"
+                    alt="{{ project.title }}" loading="lazy">
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title mb-1">{{ project.title }}</h5>
+
+                    <p class="card-text text-muted small mb-2">
+                        {{ project.description }}
+                    </p>
+
+                    <div class="d-flex align-items-center flex-wrap gap-1 mb-3 mt-auto ">
+                        <i class="ph ph-tag fs-5 text-secondary"></i>
+                        {% for tag in project.tags %}
+                        <span class="badge rounded-pill border px-2 py-1 text-muted shine-effect">
+                            {{ tag|capitalize }}
+                        </span>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Push buttons to bottom -->
+                    <div class="d-flex gap-2">
+                        {% if project.github %}
+                        <a href="{{ project.github }}"
+                            class="btn custom-btn-secondary btn-sm d-flex align-items-center gap-1" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="ph ph-github-logo fs-5"></i>
+                            Code
+                        </a>
+                        {% endif %}
+
+                        <a href="{{ project.url }}"
+                            class="btn custom-btn-primary btn-sm d-flex align-items-center gap-1" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="ph ph-globe fs-5"></i>
+                            Project
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% endblock %}
