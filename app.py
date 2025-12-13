@@ -9,19 +9,22 @@ with open("static\media\data.json", "r") as f:
 # Access sections
 stack = data["stack"]
 links = data["links"]
-projects = data["project_data"]
+projects_data = data["project_data"]
 
 @app.route('/')
 def home():
-    return render_template('index.html',links=links,projects=projects,stack=stack)
+    return render_template('index.html',links=links,projects_data=projects_data,stack=stack)
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html',links=links)
 
-@app.route('/project_page')
-def project_page():
+@app.route('/projects')
+def projects():
     return render_template('project.html',links=links)
 
+@app.route('/resume')
+def resume():
+    return render_template('resume.html',links=links)
 if __name__ == '__main__':
     app.run(debug=True)

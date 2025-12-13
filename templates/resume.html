@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section-padding">
+    <h1 class="text-center">Resume</h1>
+    <div class="text-center">
+        <a href="{{ url_for('static', filename='media/chitesh_malhotra.pdf') }}"
+            class=" btn custom-btn-secondary btn-sm">Pop-out resume</a>
+        <a href="{{ url_for('static', filename='media/chitesh_malhotra.pdf') }}" download="chitesh_malhotra_resume.pdf"
+            class="btn custom-btn-primary btn-sm">Download resume</a>
+    </div>
+    <hr>
+    <embed src="{{ url_for('static', filename='media/chitesh_malhotra.pdf') }}" type="application/pdf" height="950px"
+        width="100%">
+</section>
+
+{% endblock %}
