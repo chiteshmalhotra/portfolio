@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chitesh Malhotra</title>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='media/thumbnails/profile.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='media/thumbnails/logo.png') }}">
 
 
     <!-- bootstrap -->
@@ -35,11 +35,7 @@
 
             <!-- Brand -->
             <a class="" href="{{ url_for('home') }}">
-                <div class="overlay-wrap me-2">
-                    <img src="{{ url_for('static', filename='media/thumbnails/profile.png') }}" class="profile-size" />
-                    <img src="{{ url_for('static', filename='media/thumbnails/profile_hover.png') }}"
-                        class="overlay profile-size" />
-                </div>
+                <img src="{{ url_for('static', filename='media/thumbnails/logo.png') }}" class="logo-size" />
             </a>
 
             <!-- Right Items -->
@@ -61,7 +57,7 @@
 
 
     <!-- MAIN CONTENT -->
-    <main class="my-3 main-width mx-auto">
+    <main class="main-width mx-auto">
         {% block content %}{% endblock %}
     </main>
 
