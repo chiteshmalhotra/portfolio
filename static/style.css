@@ -1,4 +1,8 @@
-/* BASE THEME VARIABLES */
+/* =========================
+   THEME VARIABLES
+========================= */
+
+/* BASE THEME */
 :root {
     --width: 700px;
 
@@ -18,13 +22,14 @@
     --shine: rgba(155, 155, 155, 0.4);
 }
 
+/* =========================
+   FONTS & TYPOGRAPHY
+========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5,
+.my-font {
     font-family: 'Fira Code', monospace;
 }
 
@@ -32,8 +37,21 @@ p {
     font-family: sans-serif;
 }
 
-.my-font {
-    font-family: 'Fira Code', monospace;
+::selection {
+    color: var(--bg);
+    background-color: var(--accent);
+}
+
+/* =========================
+   BASE ELEMENTS
+========================= */
+
+.bg {
+    background-color: var(--bg);
+}
+
+.card {
+    background: var(--bg);
 }
 
 #map {
@@ -42,20 +60,23 @@ p {
     border-radius: 10px;
 }
 
-::selection {
-    color: var(--bg);
-    background-color: var(--accent);
-}
+/* =========================
+   LAYOUT HELPERS
+========================= */
 
-/* helper */
 .main-width {
     max-width: var(--width);
     width: 100%;
 }
 
-.bg {
-    background-color: var(--bg);
+.section-padding {
+    padding: 60px 0;
+    position: relative;
 }
+
+/* =========================
+   TEXT & LINKS
+========================= */
 
 .text-accent {
     color: var(--accent) !important;
@@ -68,7 +89,7 @@ p {
 .link-underline {
     color: var(--text);
     text-decoration: none;
-    font-size:15px;
+    font-size: 15px;
     transition: all 200ms ease;
 }
 
@@ -78,153 +99,9 @@ p {
     text-underline-offset: 3px;
 }
 
-.core-skill {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    font-weight: normal;
-    border: 3px dotted var(--muted);
-    border-radius: 10px;
-    padding: 1px 5px 1px 5px;
-    line-height: 1.1;
-    transition: all 200ms ease;
-}
-
-.core-skill:hover {
-    border-color: var(--text) !important;
-}
-
-.overlay {
-    position: relative;
-    text-align: center;
-}
-
-.overlay {
-    position: relative;
-}
-
-.top-right {
-    position: absolute;
-    top: 4px;
-    right: 8px;
-    z-index: 10;
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    font-size: 0.85rem;
-}
-
-.footer-link {
-    display: flex;
-    color: #b0b0b0;
-    text-decoration: none;
-    align-items: center;
-    gap: 6px;
-    max-width: fit-content;
-    transition: all 200ms ease;
-}
-
-.footer-link:hover {
-    color: white;
-}
-
-.bg-frost {
-    backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.card {
-    background: var(--bg);
-}
-
-/* icons */
-.icon {
-    text-decoration: none;
-    transition: all 200ms ease;
-}
-
-.icon:hover {
-    color: var(--accent) !important;
-    /* transform: scale(1.05); */
-}
-
-/* section padding */
-.section-padding {
-    padding: 60px 0;
-    position: relative;
-}
-
-.chess-board {
-    border-radius: 10px;
-    background:
-        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png'),
-        repeating-conic-gradient(#f5e1b9 0 25%, #b58763 0 50%) 50% / 50px 50px;
-    background-blend-mode: multiply;
-}
-
-.wood {
-    background:
-        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png'),
-        #b58763;
-    background-size: cover;
-    background-repeat: repeat;
-    background-blend-mode: multiply;
-    border: 1px solid #000 !important;
-    border-radius: 10px;
-    color: #000 !important;
-}
-
-/* .chess-board {
-  background:
-    repeating-conic-gradient(
-      color-mix(in srgb, var(--text) 40%, transparent) 0 25%,
-      var(--bg) 0 50%
-    )
-    50% / 50px 50px;
-  transition: background 0.25s ease-in-out;
-}
-
-.chess-board:hover {
-  background:
-    repeating-conic-gradient(
-      color-mix(in srgb, var(--accent) 60%, transparent) 0 25%,
-      var(--bg) 0 50%
-    )
-    50% / 50px 50px;
-}
-
-
-
-.wood {
-    border: 2px solid #000;
-    border-radius: 10px;
-    background-color: var(--bg);
-} */
-
-.viewall-link {
-    color: var(--muted);
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    transition: all 200ms ease;
-}
-
-.viewall-link i {
-    color: var(--muted);
-    padding-left: 2px;
-    transition: all 200ms ease;
-}
-
-.viewall-link:hover {
-    color: var(--accent) !important;
-}
-
-.viewall-link:hover i {
-    transform: translateX(2px);
-    color: var(--accent);
-}
+/* =========================
+   CARDS & UI ELEMENTS
+========================= */
 
 .card-hover {
     background-color: var(--bg);
@@ -235,289 +112,77 @@ p {
 
 .card-hover:hover {
     border-color: var(--accent);
-    /* background-color: oklab(0.204404 0.0000931323 0.00000409782 / 0.03); */
 }
 
-/* Apply to any element */
-.shine-effect {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Shine lines */
-.shine-effect::before,
-.shine-effect::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 20px;
-    /* thinner line */
-    height: 100%;
-    background: linear-gradient(120deg,
-            transparent 0%,
-            var(--shine) 50%,
-            /* subtle white shine */
-            transparent 100%);
-    transform: skewX(-20deg);
-    opacity: 0;
-    transition: left 0.6s ease, opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.shine-effect::after {
-    left: -120%;
-    width: 20px;
-    transition-delay: 0.1s;
-}
-
-/* Hover animation */
-.shine-effect:hover::before {
-    left: 120%;
-    opacity: 1;
-}
-
-.shine-effect:hover::after {
-    left: 120%;
-    opacity: 1;
-}
-
-.shine-effect:not(:hover)::before,
-.shine-effect:not(:hover)::after {
-    transition: none;
-}
-
-
-/* PRIMARY BUTTON */
-.custom-btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-    font-weight: 500;
-    outline: 2px solid var(--accent) !important;
-    border: 2px solid var(--accent) !important;
-    outline-offset: -2px;
-    border-radius: var(--bs-border-radius);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.20);
-    transition: all 200ms ease;
-}
-
-.custom-btn-primary:hover,
-.custom-btn-primary:focus {
-    background-color: var(--bg) !important;
-    color: var(--accent);
-    outline: 2px solid var(--accent) !important;
-    outline-offset: -6px !important;
-}
-
-/* SECONDARY BUTTON */
-.custom-btn-secondary {
-    color: var(--muted);
-    font-weight: 500;
-    outline: 2px solid var(--muted) !important;
-    border: 2px solid var(--muted) !important;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.20);
-    outline-offset: -2px;
-    border-radius: var(--bs-border-radius);
-    transition: all 200ms ease;
-}
-
-.custom-btn-secondary:hover,
-.custom-btn-secondary:focus {
-    outline: 2px solid var(--muted) !important;
-    outline-offset: -6px !important;
-}
-
-.btn-sm {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-}
-
-.speaker {
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 200ms ease;
-}
-
-.speaker:hover {
-    color: var(--accent);
-}
-
-.image-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: black;
+.core-skill {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: normal;
+    border: 3px dotted var(--muted);
     border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    padding: 1px 5px;
+    line-height: 1.1;
     transition: all 200ms ease;
-    transform-origin: center;
 }
 
-.card:hover .image-container img {
-    transform: scale(1.02);
+.core-skill:hover {
+    border-color: var(--text) !important;
 }
 
-.color-fill {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: color 0.3s ease;
+/* =========================
+   ICONS & LINKS
+========================= */
+
+.icon {
+    text-decoration: none;
+    transition: all 200ms ease;
 }
 
-.color-fill::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--text);
-    /* dark reveal */
-    transition: left 0.4s ease;
-    z-index: 0;
+.icon:hover {
+    color: var(--accent) !important;
 }
 
-/* bring all content above the reveal background */
-.color-fill>* {
-    position: relative;
-    z-index: 2;
-}
-
-/* hover → background reveals */
-.color-fill:hover::before {
-    left: 0;
-}
-
-/* flip colors on hover */
-.color-fill:hover p,
-.color-fill:hover h4 {
-    color: var(--bg) !important;
-}
-
-
-/* theme transition animation */
-@keyframes circle-reveal {
-    from {
-        clip-path: circle(0px at 100% 0%);
-    }
-
-    to {
-        clip-path: circle(150vmax at 100% 0%);
-    }
-}
-
-::view-transition-new(root) {
-    animation: circle-reveal 0.7s ease-out;
-}
-
-/* form control */
-.form-control {
-    background: var(--bg);
-    transition: all 200ms;
-}
-
-.form-control:hover {
-    border-color: var(--accent);
-    box-shadow: none;
-}
-
-.form-control:focus {
-    border-color: var(--accent);
-    box-shadow: none;
-}
-
-@media (max-width: 800px) {
-
-    :root,
-    :root[data-bs-theme='light'] {
-        --width: 90% !important;
-    }
-
-    .orbit {
-        display: none !important;
-    }
-}
-
-
-
-.orbit-small,
-.orbit-big {
-    flex-shrink: 0;
+.footer-link {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 3px dotted rgba(var(--bs-secondary-rgb), 0.4);
-    position: relative;
-    animation-name: spin;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
+    gap: 6px;
+    color: #b0b0b0;
+    text-decoration: none;
+    max-width: fit-content;
+    transition: all 200ms ease;
 }
 
-.orbit-big {
-    width: 140px;
-    height: 140px;
-    animation-duration: 10s;
+.footer-link:hover {
+    color: white;
 }
 
-.orbit-small {
-    width: 70px;
-    height: 70px;
-    animation-duration: 5s;
-    animation-direction: reverse;
+.viewall-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 200ms ease;
 }
 
-.orbit-small:hover,
-.orbit-big:hover {
-    animation-play-state: paused;
+.viewall-link i {
+    padding-left: 2px;
+    color: var(--muted);
+    transition: all 200ms ease;
 }
 
-.orbit-icon {
-    position: absolute;
-    background-color: var(--bg);
+.viewall-link:hover,
+.viewall-link:hover i {
+    color: var(--accent);
 }
 
-/* TOP */
-.i1 {
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.viewall-link:hover i {
+    transform: translateX(2px);
 }
 
-/* RIGHT */
-.i2 {
-    top: 50%;
-    right: 0%;
-    transform: translate(50%, -50%);
-}
-
-/* BOTTOM */
-.i3 {
-    bottom: 0%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-
-/* LEFT */
-.i4 {
-    top: 50%;
-    left: 0%;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
+/* =========================
+   OVERLAYS
+========================= */
 
 .overlay-wrap {
     position: relative;
@@ -535,56 +200,250 @@ p {
     opacity: 1;
 }
 
+.top-right {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    z-index: 10;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: black;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 200ms ease;
+}
+
+.card:hover .image-container img {
+    transform: scale(1.02);
+}
+
+/* =========================
+   EFFECTS
+========================= */
+
+.bg-frost {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::before,
+.shine-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        var(--shine) 50%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    opacity: 0;
+    transition: left 0.6s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.shine-effect::after {
+    transition-delay: 0.1s;
+}
+
+.shine-effect:hover::before,
+.shine-effect:hover::after {
+    left: 120%;
+    opacity: 1;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.custom-btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+    border: 2px solid var(--accent) !important;
+    outline: 2px solid var(--accent) !important;
+    outline-offset: -2px;
+    border-radius: var(--bs-border-radius);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease;
+}
+
+.custom-btn-primary:hover,
+.custom-btn-primary:focus {
+    background-color: var(--bg) !important;
+    color: var(--accent);
+    outline-offset: -6px !important;
+}
+
+.custom-btn-secondary {
+    color: var(--muted);
+    font-weight: 500;
+    border: 2px solid var(--muted) !important;
+    outline: 2px solid var(--muted) !important;
+    outline-offset: -2px;
+    border-radius: var(--bs-border-radius);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease;
+}
+
+.custom-btn-secondary:hover,
+.custom-btn-secondary:focus {
+    outline-offset: -6px !important;
+}
+
+.btn-sm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-control {
+    background: var(--bg);
+    transition: all 200ms;
+}
+
+.form-control:hover,
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+/* =========================
+   ORBITS & ANIMATIONS
+========================= */
+
+.orbit-big,
+.orbit-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px dotted rgba(var(--bs-secondary-rgb), 0.4);
+    position: relative;
+    animation: spin linear infinite;
+}
+
+.orbit-big {
+    width: 140px;
+    height: 140px;
+    animation-duration: 10s;
+}
+
+.orbit-small {
+    width: 70px;
+    height: 70px;
+    animation-duration: 5s;
+    animation-direction: reverse;
+}
+
+.orbit-big:hover,
+.orbit-small:hover {
+    animation-play-state: paused;
+}
+
+.orbit-icon {
+    position: absolute;
+    background-color: var(--bg);
+}
+
+/* icon positions */
+.i1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.i2 { top: 50%; right: 0; transform: translate(50%, -50%); }
+.i3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.i4 { top: 50%; left: 0; transform: translate(-50%, -50%); }
+
+/* =========================
+   MISC
+========================= */
+
 .profile-size {
     width: 30px;
 }
 
-.disc {
-    height: 90px;
-    width: 90px;
-    color: var(--accent);
-    font-size: xx-large;
-    background-color: var(--text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: rotate 0.6s infinite linear;
-}
-
-.disc:hover {
-    animation-play-state: paused;
-}
-
-@keyframes rotate {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.dot {
+.dot,
+.pulse-dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
 }
 
 .pulse-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
     animation: pulse 1s infinite;
 }
 
+.speaker {
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.speaker:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 @keyframes pulse {
-    0% {
-        transform: scale(1)
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
 
-    50% {
-        transform: scale(1.3)
-    }
+@keyframes circle-reveal {
+    from { clip-path: circle(0 at 100% 0%); }
+    to { clip-path: circle(150vmax at 100% 0%); }
+}
 
-    100% {
-        transform: scale(1)
+::view-transition-new(root) {
+    animation: circle-reveal 0.7s ease-out;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+    :root,
+    :root[data-bs-theme='light'] {
+        --width: 90% !important;
     }
 }
