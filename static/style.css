@@ -428,3 +428,26 @@ p {
     cursor: pointer;
     color: var(--accent);
 }
+
+.disc {
+    height: 90px;
+    width: 90px;
+    color: var(--accent);
+    font-size: xx-large;
+    background-color: var(--text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 0.6s infinite linear;
+}
+
+.disc:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
