@@ -3,53 +3,36 @@
 
 <section class="section-padding">
 
-    <div class="d-flex flex-column gap-4">
-
-        <!-- Map + Top Right Info -->
+    <div class="d-flex flex-column gap-3">
         <div class="position-relative">
             <div id="map"></div>
-
             <div class="top-right" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-title="My local area time :D">
+                data-bs-title="X hours ahead :D">
                 <div class="d-flex align-items-center gap-1">
-                    <i class="ph ph-clock fs-6"></i>
+                    <i class="ph ph-clock"></i>
                     <h6 class="font-monospace mb-0" id="clock"></h6>
                 </div>
                 <p class="text-muted small mb-0 font-monospace">
                     New Delhi,India
                 </p>
-                <p class="text-muted small mb-0 font-monospace">
-                    GMT +5:30
-                </p>
             </div>
         </div>
 
         <!-- Name + Intro -->
-        <div>
-            <div class="d-flex align-items-center flex-wrap gap-2 row-gap-0 mb-1">
-                <h2 class="fw-bold" id="textToSpeak">Chitesh Malhotra</h2>
-                <h2 class="fw-normal text-secondary">- Data Scientist</h2>
-                <a id="speakButton">
-                    <i class="ph ph-speaker-high fs-5 speaker"></i>
-                </a>
-            </div>
-
-            <p class="lead text-muted mb-0 fw-normal">
-                I transforms data into actionable insights using
-                <span class="core-skill">{{ stack["python"]|safe }} Python</span>,
-                <span class="core-skill">{{ stack["pandas"]|safe }} Pandas</span> and
-
-                <span class="core-skill">{{ stack["sql"]|safe }} SQL</span>.
-                I am currently expanding my expertise into web development.
-            </p>
+            <div class="d-flex align-items-center gap-2">
+            <h1 class="fw-bold mb-0 " id="textToSpeak">Chitesh Malhotra</h1>
+            <i class="ph ph-speaker-high fs-5 speaker" id="speakButton"></i>
         </div>
+        <p class="lead text-muted mb-1">
+            I am a Data Scientist specilizing in <span class="fw-bold">Python ,Pandas and SQL</span>.
+            I am currently expanding my expertise into web development.
+        </p>
 
         <!-- Buttons -->
         <div class="d-flex flex-column gap-2">
 
             <div class="d-flex gap-2 flex-wrap">
-                <a href="{{ url_for('resume') }}"
-                    class="btn custom-btn-secondary d-flex align-items-center gap-1 fs-5">
+                <a href="{{ url_for('resume') }}" class="btn custom-btn-secondary d-flex align-items-center gap-1 fs-5">
                     <i class="ph ph-user"></i> Resume
                 </a>
 
@@ -59,23 +42,23 @@
             </div>
 
             <!-- Social Icons -->
-            <div class="d-flex gap-3 flex-wrap">
-                <a href="{{ links.github_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
+            <div class="d-flex gap-3">
+                <a href="{{ links.github_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" data-bs-title="{{ links.github }}">
                     <i class="ph ph-github-logo"></i>
                 </a>
 
-                <a href="{{ links.linkedin_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.linkedin_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" data-bs-title="{{ links.linkedin }}">
                     <i class="ph ph-linkedin-logo"></i>
                 </a>
 
-                <a href="{{ links.twitter_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.twitter_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" data-bs-title="{{ links.twitter }}">
                     <i class="ph ph-twitter-logo"></i>
                 </a>
 
-                <a href="{{ links.email_url }}" target="_blank" class="icon text-muted fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.email_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" data-bs-title="{{ links.email }}">
                     <i class="ph ph-envelope-simple"></i>
                 </a>
@@ -101,8 +84,9 @@
         </div> -->
 
 <section class="section-padding">
+    <div class="d-flex flex-column gap-3">
     <div class="d-flex align-items-bottom">
-        <div class="d-flex align-items-center gap-2 mb-1 me-auto">
+        <div class="d-flex align-items-bottom gap-2 mb-0 me-auto">
             <i class="ph ph-code fs-2 text-accent"></i>
             <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
         </div>
@@ -112,9 +96,9 @@
         </a>
     </div>
 
-    <div class="d-flex flex-column gap-4">
+    
         {% for project in projects_data %}
-        <div class="card p-3 rounded-3 position-relative card-hover">
+        <div class="card p-3 rounded-1 position-relative accent-border shadow-sm">
 
             <!-- Full-card clickable -->
             <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
@@ -146,7 +130,6 @@
                     </p>
 
                     <div class="d-flex align-items-center flex-wrap gap-1" style="z-index: 5;">
-                        <i class="ph ph-tag fs-5 text-secondary"></i>
                         {% for tag in project.tags %}
                         <span class="badge rounded-pill border px-2 py-1 text-muted shine-effect">
                             {{ tag|capitalize }}
@@ -156,15 +139,16 @@
 
                     <div class="d-flex align-items-center gap-2 mt-auto">
                         <a href="{{ project.github }}"
-                            class="btn custom-btn-secondary d-flex align-items-center gap-1 small btn-sm" style="z-index: 5;"
-                            target="_blank">
-                            <i class="ph ph-github-logo fs-5"></i>
-                            Code
+                            class="btn custom-btn-secondary d-flex align-items-center gap-1 small btn-sm"
+                            style="z-index: 5;" target="_blank">
+                            <i class="ph ph-github-logo fs-6"></i>
+                            Github
                         </a>
 
                         <a href="{{ project.url }}"
-                            class="btn custom-btn-primary d-flex align-items-center gap-1 small btn-sm" target="_blank" style="z-index: 5;">
-                            <i class="ph ph-globe fs-5"></i>
+                            class="btn custom-btn-primary d-flex align-items-center gap-1 small btn-sm" target="_blank"
+                            style="z-index: 5;">
+                            <i class="ph ph-globe fs-6"></i>
                             Project
                         </a>
                     </div>

@@ -50,13 +50,9 @@ p {
     background-color: var(--bg);
 }
 
-.card {
-    background: var(--bg);
-}
-
 #map {
     width: 100%;
-    height: 200px;
+    height: 150px;
     border-radius: 10px;
 }
 
@@ -102,32 +98,12 @@ p {
 /* =========================
    CARDS & UI ELEMENTS
 ========================= */
-
-.card-hover {
-    background-color: var(--bg);
+.accent-border{
     border: 1px solid transparent;
-    box-shadow: var(--bs-box-shadow-sm);
     transition: all 200ms ease;
 }
-
-.card-hover:hover {
-    border-color: var(--accent);
-}
-
-.core-skill {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    font-weight: normal;
-    border: 3px dotted var(--muted);
-    border-radius: 10px;
-    padding: 1px 5px;
-    line-height: 1.1;
-    transition: all 200ms ease;
-}
-
-.core-skill:hover {
-    border-color: var(--text) !important;
+.accent-border:hover {
+    border: 1px solid var(--accent);
 }
 
 /* =========================
@@ -135,6 +111,7 @@ p {
 ========================= */
 
 .icon {
+    color: var(--muted);
     text-decoration: none;
     transition: all 200ms ease;
 }
@@ -146,7 +123,7 @@ p {
 .footer-link {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     color: #b0b0b0;
     text-decoration: none;
     max-width: fit-content;
@@ -220,7 +197,7 @@ p {
     width: 100%;
     aspect-ratio: 16 / 9;
     background: black;
-    border-radius: 10px;
+    border-radius: 0.25rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -259,7 +236,7 @@ p {
     position: absolute;
     top: 0;
     left: -120%;
-    width: 20px;
+    width: 10px;
     height: 100%;
     background: linear-gradient(
         120deg,
@@ -294,7 +271,7 @@ p {
     border: 2px solid var(--accent) !important;
     outline: 2px solid var(--accent) !important;
     outline-offset: -2px;
-    border-radius: var(--bs-border-radius);
+    border-radius: 0.25rem;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     transition: all 200ms ease;
 }
@@ -302,8 +279,8 @@ p {
 .custom-btn-primary:hover,
 .custom-btn-primary:focus {
     background-color: var(--bg) !important;
-    color: var(--accent);
-    outline-offset: -6px !important;
+    color: var(--accent) !important;
+    outline-offset: 3px !important;
 }
 
 .custom-btn-secondary {
@@ -312,14 +289,14 @@ p {
     border: 2px solid var(--muted) !important;
     outline: 2px solid var(--muted) !important;
     outline-offset: -2px;
-    border-radius: var(--bs-border-radius);
+    border-radius: 0.25rem;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     transition: all 200ms ease;
 }
 
 .custom-btn-secondary:hover,
 .custom-btn-secondary:focus {
-    outline-offset: -6px !important;
+    outline-offset: 3px !important;
 }
 
 .btn-sm {
@@ -440,4 +417,14 @@ p {
     :root[data-bs-theme='light'] {
         --width: 90% !important;
     }
+}
+
+
+.speaker{
+    color: var(--muted);
+    transition: all 200ms;
+}
+.speaker:hover{
+    cursor: pointer;
+    color: var(--accent);
 }
