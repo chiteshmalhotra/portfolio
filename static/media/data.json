@@ -16,7 +16,6 @@
       "tags": [
         "python",
         "flask",
-        "html5",
         "css3",
         "javascript"
       ],
@@ -24,7 +23,7 @@
       "url": "https://example.com/",
       "image": "media/thumbnails/placeholder.png",
       "github": "https://github.com/chiteshmalhotra",
-      "description": "This is a short description of the project. It explain coloreds what the project.This is a short description of the eds what the project.This is a short description of the project."
+      "description": "This is a short description of the project. It explain coloreds what the project.This is a short description of the project.This is a short description of the project."
     },
     {
       "title": "Project Title 2",
@@ -32,14 +31,13 @@
         "python",
         "flask",
         "html5",
-        "css3",
-        "javascript"
+        "css3"
       ],
       "state":"Completed",
       "url": "https://example.com/",
       "image": "media/thumbnails/placeholder.png",
       "github": "https://github.com/chiteshmalhotra",
-      "description": "Another project description goes here. Keep it concise and informative.Another project description goes here. Keep it concise and informative.Another project description goes here."
+      "description": "Another project description goes here it concise and informative.Another project description goes here. Keep it concise and informative.Another project description goes here."
     }
   ],
   "stack": {
@@ -51,6 +49,18 @@
   "flask": "<i class=\"devicon-flask-original text-primary\"></i>",
   "sql": "<i class=\"devicon-azuresqldatabase-plain colored\"></i>",
   "github": "<i class=\"devicon-github-original\"></i>"
+},
+  "skills": {
+  "python": "<i class=\"devicon-python-plain text-primary\"></i>",
+  "numpy": "<i class=\"devicon-numpy-plain colored\"></i>",
+  "pandas": "<i class=\"devicon-pandas-plain text-danger\"></i>",
+  "matplotlib": "<i class=\"devicon-matplotlib-plain text-warning\"></i>",
+  "bootstrap": "<i class=\"devicon-bootstrap-plain colored\"></i>",
+  "flask": "<i class=\"devicon-flask-original text-primary\"></i>",
+  "sql": "<i class=\"devicon-azuresqldatabase-plain colored\"></i>",
+  "github": "<i class=\"devicon-github-original\"></i>",
+  "css3": "<i class=\"devicon-css3-plain colored\"></i>",
+  "html5": "<i class=\"devicon-html5-plain colored\"></i>",
+  "javascript": "<i class=\"devicon-javascript-plain colored\"></i>"
 }
-
 }

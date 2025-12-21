@@ -182,6 +182,8 @@ p {
     top: 4px;
     right: 8px;
     z-index: 10;
+    border-radius: 0.25rem;
+    padding: 2px;
     color: var(--text);
     display: flex;
     flex-direction: column;
@@ -194,7 +196,7 @@ p {
 ========================= */
 
 .image-container {
-    width: 100%;
+    width: 100%;    
     aspect-ratio: 16 / 9;
     background: black;
     border-radius: 0.25rem;
@@ -267,7 +269,7 @@ p {
 .custom-btn-primary {
     background: var(--accent);
     color: var(--bg);
-    font-weight: 500;
+    font-weight: 500;   
     border: 2px solid var(--accent) !important;
     outline: 2px solid var(--accent) !important;
     outline-offset: -2px;
@@ -429,17 +431,17 @@ p {
     color: var(--accent);
 }
 
+.disc-1,
 .disc {
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
     color: var(--accent);
-    font-size: xx-large;
     background-color: var(--text);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: rotate 0.6s infinite linear;
+    animation: rotate 1s infinite linear;
 }
 
 .disc:hover {

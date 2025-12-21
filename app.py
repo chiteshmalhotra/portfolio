@@ -9,11 +9,12 @@ with open("static\media\data.json", "r") as f:
 # Access sections
 stack = data["stack"]
 links = data["links"]
+skills = data["skills"]
 projects_data = data["project_data"]
 
 @app.route('/')
 def home():
-    return render_template('index.html',links=links,projects_data=projects_data,stack=stack)
+    return render_template('index.html',links=links,projects_data=projects_data,stack=stack,skills=skills)
 
 @app.route('/contact')
 def contact():

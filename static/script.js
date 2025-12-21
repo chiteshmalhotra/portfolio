@@ -118,11 +118,12 @@ new maplibregl.Marker()
 
 function updateClock() {
     const now = new Date();
-    const optionsIndia = { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+    const optionsIndia = { timeZone: 'Asia/Kolkata',hour: "numeric",  minute: 'numeric',  hour12: true };
     const timeIndia = new Intl.DateTimeFormat('en-IN', optionsIndia).format(now)
     //   console.log("Current Time:", now.toLocaleTimeString());
     document.getElementById('clock').innerText = timeIndia;
 }
 
 // Run updateClock every 1 second (1000 milliseconds)
-let clockInterval = setInterval(updateClock, 1000);
+updateClock()
+let clockInterval = setInterval(updateClock, 60000);

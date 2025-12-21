@@ -6,20 +6,21 @@
     <div class="d-flex flex-column gap-3">
         <div class="position-relative">
             <div id="map"></div>
-            <div class="top-right" data-bs-toggle="tooltip" data-bs-placement="top"
+            <div class="top-right bg-frost" data-bs-toggle="tooltip" data-bs-placement="top"
                 data-bs-title="X hours ahead :D">
                 <div class="d-flex align-items-center gap-1">
                     <i class="ph ph-clock"></i>
                     <h6 class="font-monospace mb-0" id="clock"></h6>
                 </div>
-                <p class="text-muted small mb-0 font-monospace">
-                    New Delhi,India
-                </p>
+                <div class="d-flex align-items-center gap-1 text-muted">
+                    <i class="ph ph-map-pin "></i>
+                    <h6 class="font-monospace mb-0">India</h6>
+                </div>
             </div>
         </div>
 
         <!-- Name + Intro -->
-            <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2">
             <h1 class="fw-bold mb-0 " id="textToSpeak">Chitesh Malhotra</h1>
             <i class="ph ph-speaker-high fs-5 speaker" id="speakButton"></i>
         </div>
@@ -85,26 +86,26 @@
 
 <section class="section-padding">
     <div class="d-flex flex-column gap-3">
-    <div class="d-flex align-items-bottom">
-        <div class="d-flex align-items-bottom gap-2 mb-0 me-auto">
-            <i class="ph ph-code fs-2 text-accent"></i>
-            <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
+        <div class=" d-flex align-items-center">
+            <div class="d-flex align-items-center gap-2 mb-0 me-auto">
+                <i class="ph ph-code fs-2 text-accent"></i>
+                <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
+            </div>
+            <a href="{{ url_for('projects')}}" class="viewall-link d-flex align-items-center">
+                <span class="small">View all</span>
+                <i class="ph ph-arrow-right"></i>
+            </a>
         </div>
-        <a href="{{ url_for('projects')}}" class="viewall-link d-flex align-items-center">
-            <span class="small">View all</span>
-            <i class="ph ph-arrow-right"></i>
-        </a>
-    </div>
 
-    
+
         {% for project in projects_data %}
         <div class="card p-3 rounded-1 position-relative accent-border shadow-sm">
 
             <!-- Full-card clickable -->
             <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
-            <div class="d-flex align-items-top mb-0">
-                <h4 class="fw-semibold me-auto ">{{ project.title }}</h4>
-                <div class="badge rounded-pill border px-2 py-1 shine-effect mb-auto me-2 fw-semibold d-flex gap-1 align-items-center text-normal
+            <div class="d-flex align-items-center mb-2">
+                <h4 class="fw-semibold me-auto mb-0">{{ project.title }}</h4>
+                <div class="badge rounded-pill border px-2 py-1 shine-effect me-2 fw-semibold d-flex gap-1 align-items-center text-normal
                 {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}"
                     style="z-index: 5;">
                     <div
@@ -132,6 +133,7 @@
                     <div class="d-flex align-items-center flex-wrap gap-1" style="z-index: 5;">
                         {% for tag in project.tags %}
                         <span class="badge rounded-pill border px-2 py-1 text-muted shine-effect">
+                            {{ skills[tag]|safe }}
                             {{ tag|capitalize }}
                         </span>
                         {% endfor %}
@@ -160,47 +162,55 @@
 </section>
 
 <section class="section-padding">
+    <div class="d-flex align-items-center gap-1 mb-0 me-auto">
+        <i class="ph ph-person fs-3 text-accent pb-1"></i>
+        <h2 class="fw-semibold mb-0 text-muted">About</h2>
+    </div>
     <div class="row g-3">
         <!-- About -->
         <div class="col-12 col-md-8">
             <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-sunglasses text-accent fs-4"></i>
+                    <i class="ph ph-sunglasses fs-5"></i>
                     <h5 class="mb-0">Chitesh Malhotra</h5>
                 </div>
-                <p class="text-muted mb-0">
+                <p class="text-muted">
                     I'm a Data Scientist who loves giving insights that have real-world impact.
                     I specialize in building data analysis pipelines and extracting meaningful insights.
                 </p>
             </div>
         </div>
 
-        <!-- Connect -->
+        <!-- Music -->
         <div class="col-12 col-md-4">
-            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
-                <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-coffee text-accent fs-4"></i>
-                    <h5 class="mb-0">Let’s connect</h5>
+            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column gap-1">
+
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-1 mb-2">
+                            <i class="ph ph-music-notes fs-5"></i>
+                            <h5 class="mb-0">Music</h5>
+                        </div>
+                        <p class="text-muted mb-0">Bargad</p>
+                        <p class="text-muted mb-0 small">by surf</p>
+                    </div>
+                    <div class="p-1">
+                        <div class="disc"><i class="ph ph-vinyl-record fs-1"></i></div>
+                    </div>
+
                 </div>
-                <p class="text-muted small mb-3">
-                    Always open to interesting projects & conversations.
-                </p>
-                <a href="{{ url_for('contact') }}" target="_blank"
+                <a href="#" target="_blank"
                     class="btn custom-btn-primary btn-sm d-flex align-items-center gap-2 justify-content-center mt-auto">
-                    <i class="ph ph-paper-plane-tilt"></i>
-                    Get in touch
+                    <i class="ph ph-play"></i>
+                    Play
                 </a>
             </div>
         </div>
-    </div>
-    
-    <!-- Row 2 -->
-    <div class="row g-3 mt-1">
         <!-- Chess -->
         <div class="col-12 col-md-4">
             <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-castle-turret text-accent fs-5"></i>
+                    <i class="ph ph-castle-turret fs-5"></i>
                     <h5 class="mb-0">Chess</h5>
                 </div>
                 <p class="text-muted small mb-3">
@@ -215,6 +225,30 @@
         <!-- Skills -->
         <div class="col-12 col-md-8">
             <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
+                <div class="d-flex align-items-center gap-1 mb-2">
+                    <i class="ph ph-coffee fs-5"></i>
+                    <h5 class="mb-0">Let’s connect</h5>
+                </div>
+                <p class="text-muted small mb-3">
+                    Currently looking for a a full
+                    Always open to interesting projects & conversations.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ url_for('resume') }}"
+                        class="btn custom-btn-secondary btn-sm d-flex align-items-center gap-2 justify-content-center mt-auto flex-grow-1">
+                        <i class="ph ph-user"></i>
+                        Resume
+                    </a>
+                    <a href="{{ url_for('contact') }}"
+                        class="btn custom-btn-primary btn-sm d-flex align-items-center gap-2 justify-content-center mt-auto flex-grow-1">
+                        <i class="ph ph-paper-plane-tilt"></i>
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-12 col-md-8">
+            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-3">
                     <i class="ph ph-gear text-accent fs-5"></i>
                     <h5 class="mb-0">Stack</h5>
@@ -228,11 +262,8 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-
-    <!-- <div class="disc"><i class="ph ph-vinyl-record fs-1"></i>
-    </div> -->
 </section>
 
 {% endblock %}
