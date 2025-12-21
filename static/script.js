@@ -2,7 +2,12 @@
 // BOOTSTRAP TOOLTIPS
 // -----------------------
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+const tooltipList = [...tooltipTriggerList].map(el =>
+  new bootstrap.Tooltip(el, {
+    delay: { show: 200, hide: 0 }
+  })
+)
 
 
 // -----------------------
@@ -59,7 +64,7 @@ function copydetail(event, textToCopy) {
     tooltip.show();
 
     // change icon
-    icon.className = "ph ph-check-circle text-success small";
+    icon.className = "ph ph-check-circle text-success";
 
     // reset after 2s
     setTimeout(() => {

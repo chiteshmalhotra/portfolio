@@ -3,8 +3,8 @@
 
 <section class="section-padding">
 
-    <div class="d-flex flex-column gap-3">
-        <div class="position-relative">
+    <div class="d-flex flex-column gap-3 ">
+        <div class="position-relative corner p-1">
             <div id="map"></div>
             <div class="top-right bg-frost" data-bs-toggle="tooltip" data-bs-placement="top"
                 data-bs-title="X hours ahead :D">
@@ -24,8 +24,10 @@
             <h1 class="fw-bold mb-0 " id="textToSpeak">Chitesh Malhotra</h1>
             <i class="ph ph-speaker-high fs-5 speaker" id="speakButton"></i>
         </div>
-        <p class="lead text-muted mb-1">
-            I am a Data Scientist specializing in <span class="fw-bold">Python ,Pandas and SQL</span>.
+        <p class="lead text-muted mb-1 fw-normal">
+            I am a <span class="fw-bold text-normal">Data Scientist</span> specializing in <span
+                class="fw-bold text-normal">Python ,Exploratory data analysis</span> and<span
+                class="fw-bold text-normal"> Data Visualization</span>.
             I am currently expanding my expertise into web development.
         </p>
 
@@ -64,46 +66,42 @@
                     <i class="ph ph-envelope-simple"></i>
                 </a>
             </div>
-
         </div>
     </div>
-
 </section>
 
 
 <!-- <div class="pt-3 mx-auto orbit">
-            <div class="orbit-big">
-                <i class="devicon-docker-plain text-warning orbit-icon fs-4 i1"></i>
-                <i class="devicon-numpy-plain colored orbit-icon fs-4 i2"></i>
-                <i class="devicon-pandas-plain text-danger orbit-icon fs-4 i3"></i>
-                <i class="devicon-azuresqldatabase-plain text-success orbit-icon fs-4 i4"></i>
-                <div class="orbit-small">
-                    <i class="devicon-python-plain text-primary orbit-icon fs-4 i1"></i>
-                    <i class="devicon-github-original orbit-icon fs-4 i3"></i>
-                </div>
-            </div>
-        </div> -->
+    <div class="orbit-big">
+        <i class="devicon-docker-plain text-warning orbit-icon fs-4 i1"></i>
+        <i class="devicon-numpy-plain colored orbit-icon fs-4 i2"></i>
+        <i class="devicon-pandas-plain text-danger orbit-icon fs-4 i3"></i>
+        <i class="devicon-azuresqldatabase-plain text-success orbit-icon fs-4 i4"></i>
+        <div class="orbit-small">
+            <i class="devicon-python-plain text-primary orbit-icon fs-4 i1"></i>
+            <i class="devicon-github-original orbit-icon fs-4 i3"></i>
+        </div>
+    </div>
+</div> -->
 
 <section class="section-padding">
-    <div class="d-flex flex-column gap-3">
-        <div class=" d-flex align-items-center">
-            <div class="d-flex align-items-center gap-2 mb-0 me-auto">
-                <i class="ph ph-code fs-2 text-accent"></i>
-                <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
-            </div>
-            <a href="{{ url_for('projects')}}" class="viewall-link d-flex align-items-center">
-                <span class="small">View all</span>
-                <i class="ph ph-arrow-right"></i>
-            </a>
+    <div class=" d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2 pb-1 me-auto">
+            <i class="ph ph-code fs-2 text-accent"></i>
+            <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
         </div>
-
-
+        <a href="{{ url_for('projects')}}" class="arrow-link d-flex align-items-center">
+            <span class="small">View all</span>
+            <i class="ph ph-caret-double-right small"></i>
+        </a>
+    </div>
+    <div class="d-flex flex-column gap-3">
         {% for project in projects_data %}
-        <div class="card p-3 rounded-1 position-relative accent-border shadow-sm">
+        <div class="card p-3 rounded-0 position-relative accent-border border">
 
             <!-- Full-card clickable -->
             <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
-            <div class="d-flex align-items-center mb-2">
+            <div class="d-flex align-items-center mb-1">
                 <h4 class="fw-semibold me-auto mb-0">{{ project.title }}</h4>
                 <div class="badge rounded-pill border px-2 py-1 shine-effect me-2 fw-semibold d-flex gap-1 align-items-center text-normal
                 {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}"
@@ -116,21 +114,21 @@
 
                 <i class="ph ph-push-pin fs-5"></i>
             </div>
-            <div class="d-flex flex-column flex-md-row gap-3">
+            <div class="row g-0">
 
                 <!-- Image -->
-                <div class="image-container">
-                    <img src="{{ url_for('static', filename=project.image) }}">
+                <div class="col-12 col-md-4 corner p-1">
+                    <img src="{{ url_for('static', filename=project.image) }}" class="w-100">
                 </div>
 
 
                 <!-- Right Content -->
-                <div class="d-flex flex-column gap-2">
+                <div class="col-12 col-md-8 d-flex flex-column gap-2 ps-2 mt-3 mt-md-0">
                     <p class="text-muted small mb-0">
                         {{ project.description }}
                     </p>
 
-                    <div class="d-flex align-items-center flex-wrap gap-1" style="z-index: 5;">
+                    <div class="d-flex align-items-center flex-wrap my-auto gap-1" style="z-index: 5;">
                         {% for tag in project.tags %}
                         <span class="badge rounded-pill border px-2 py-1 text-muted shine-effect">
                             {{ skills[tag]|safe }}
@@ -139,7 +137,7 @@
                         {% endfor %}
                     </div>
 
-                    <div class="d-flex align-items-center gap-2 mt-auto">
+                    <div class="d-flex align-items-center gap-2">
                         <a href="{{ project.github }}"
                             class="btn custom-btn-secondary d-flex align-items-center gap-1 small btn-sm"
                             style="z-index: 5;" target="_blank">
@@ -168,8 +166,8 @@
     </div>
     <div class="row g-3">
         <!-- About -->
-        <div class="col-12 col-md-8">
-            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
+        <div class="col-12 col-md-8 order-1 order-md-1">
+            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-sunglasses fs-5"></i>
                     <h5 class="mb-0">Chitesh Malhotra</h5>
@@ -181,8 +179,8 @@
                 <p class="mb-1 text-secondary text-thin font-monospace">Technologies</p>
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     {% for skill, value in stack.items() %}
-                    <div class="d-flex align-items-center gap-1 fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        data-bs-title="{{skill|capitalize}}">
+                    <div class="d-flex align-items-center gap-1 fs-5" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" data-bs-title="{{skill|capitalize}}">
                         {{ value|safe }}
                     </div>
                     {% endfor %}
@@ -191,33 +189,19 @@
         </div>
 
         <!-- Music -->
-        <div class="col-12 col-md-4">
-            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column gap-1">
-
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <div class="d-flex align-items-center gap-1 mb-2">
-                            <i class="ph ph-music-notes fs-5"></i>
-                            <h5 class="mb-0">Music</h5>
-                        </div>
-                        <p class="text-muted mb-0">Bargad</p>
-                        <p class="text-muted mb-0 small">by surf</p>
-                    </div>
-                    <div class="p-1">
-                        <div class="disc"><i class="ph ph-vinyl-record fs-1"></i></div>
-                    </div>
-
+        <div class="col-12 col-md-4 order-3 order-md-2">
+            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
+                <div class="d-flex align-items-center gap-1 mb-2">
+                    <i class="ph ph-empty fs-5"></i>
+                    <h5 class="mb-0">Coming soon</h5>
                 </div>
-                <a href="#" target="_blank"
-                    class="btn custom-btn-primary btn-sm d-flex align-items-center gap-2 justify-content-center mt-auto">
-                    <i class="ph ph-play"></i>
-                    Play
-                </a>
+
+
             </div>
         </div>
         <!-- Chess -->
-        <div class="col-12 col-md-4">
-            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
+        <div class="col-12 col-md-4 order-4 order-md-3">
+            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-castle-turret fs-5"></i>
                     <h5 class="mb-0">Chess</h5>
@@ -231,16 +215,16 @@
                 </a>
             </div>
         </div>
-        <!-- Skills -->
-        <div class="col-12 col-md-8">
-            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
+        <!-- connect -->
+        <div class="col-12 col-md-8 order-2 order-md-4">
+            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-coffee fs-5"></i>
                     <h5 class="mb-0">Let’s connect</h5>
                 </div>
                 <p class="text-muted small mb-3">
                     Currently seeking Data Science or Analytics roles — internship or full-time.
-Always open to interesting projects and conversations.
+                    Always open to interesting projects and conversations.
                 </p>
                 <div class="d-flex flex-wrap gap-2">
                     <a href="{{ url_for('resume') }}"
@@ -257,7 +241,7 @@ Always open to interesting projects and conversations.
             </div>
         </div>
         <!-- <div class="col-12 col-md-8">
-            <div class="shadow-sm p-3 rounded-3 h-100 d-flex flex-column">
+            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-3">
                     <i class="ph ph-gear text-accent fs-5"></i>
                     <h5 class="mb-0">Stack</h5>
