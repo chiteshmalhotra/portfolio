@@ -119,7 +119,7 @@ new maplibregl.Marker()
 function updateClock() {
     const now = new Date();
     const optionsIndia = { timeZone: 'Asia/Kolkata',hour: "numeric",  minute: 'numeric',  hour12: true };
-    const timeIndia = new Intl.DateTimeFormat('en-IN', optionsIndia).format(now)
+    const timeIndia = new Intl.DateTimeFormat('en-IN', optionsIndia).format(now).toUpperCase();
     //   console.log("Current Time:", now.toLocaleTimeString());
     document.getElementById('clock').innerText = timeIndia;
 }

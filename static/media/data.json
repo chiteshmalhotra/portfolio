@@ -46,7 +46,7 @@
   "pandas": "<i class=\"devicon-pandas-plain text-danger\"></i>",
   "matplotlib": "<i class=\"devicon-matplotlib-plain text-warning\"></i>",
   "bootstrap": "<i class=\"devicon-bootstrap-plain colored\"></i>",
-  "flask": "<i class=\"devicon-flask-original text-primary\"></i>",
+  "flask": "<i class=\"devicon-flask-original\"></i>",
   "sql": "<i class=\"devicon-azuresqldatabase-plain colored\"></i>",
   "github": "<i class=\"devicon-github-original\"></i>"
 },
@@ -56,7 +56,7 @@
   "pandas": "<i class=\"devicon-pandas-plain text-danger\"></i>",
   "matplotlib": "<i class=\"devicon-matplotlib-plain text-warning\"></i>",
   "bootstrap": "<i class=\"devicon-bootstrap-plain colored\"></i>",
-  "flask": "<i class=\"devicon-flask-original text-primary\"></i>",
+  "flask": "<i class=\"devicon-flask-original\"></i>",
   "sql": "<i class=\"devicon-azuresqldatabase-plain colored\"></i>",
   "github": "<i class=\"devicon-github-original\"></i>",
   "css3": "<i class=\"devicon-css3-plain colored\"></i>",

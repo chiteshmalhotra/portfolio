@@ -26,11 +26,9 @@
    FONTS & TYPOGRAPHY
 ========================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-
-h1, h2, h3, h4, h5,
-.my-font {
-    font-family: 'Fira Code', monospace;
+h1, h2, h3, h4, h5{
+    font-family: monospace;
+    font-weight: bold;
 }
 
 p {
