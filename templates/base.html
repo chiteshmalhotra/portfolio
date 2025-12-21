@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chitesh Malhotra</title>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='media/thumbnails/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
 
 
     <!-- bootstrap -->
@@ -34,8 +41,7 @@
         <div class="main-width mx-auto d-flex align-items-center justify-content-between position-relative">
 
             <!-- Brand -->
-            <a class="" href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='media/thumbnails/logo.png') }}" class="logo-size" />
+            <a href="{{ url_for('home') }}" class="logo" data-text="CM">
             </a>
 
             <!-- Right Items -->
@@ -136,8 +142,9 @@
                         <a href="{{ links.linkedin_url }}" target="_blank" class="footer-link">
                             <i class="ph ph-linkedin-logo fs-5"></i>{{ links.linkedin }}
                         </a>
-                        <i class="ph ph-clipboard text-secondary" onclick="copydetail(event, '{{ links.linkedin_url }}')"
-                            data-bs-toggle="tooltip" data-bs-original-title="Click to Copy"></i>
+                        <i class="ph ph-clipboard text-secondary"
+                            onclick="copydetail(event, '{{ links.linkedin_url }}')" data-bs-toggle="tooltip"
+                            data-bs-original-title="Click to Copy"></i>
                     </div>
 
                     <!-- Email -->

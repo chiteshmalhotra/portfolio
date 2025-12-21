@@ -5,12 +5,9 @@
 /* BASE THEME */
 :root {
     --width: 750px;
-
     --bg: #000;
     --text: white;
     --accent: #209fb5;
-
-    --shine: rgba(255, 255, 255, 0.4);
     --muted: var(--bs-secondary);
 }
 
@@ -18,8 +15,6 @@
 :root[data-bs-theme='light'] {
     --bg: white;
     --text: black;
-    --accent: #209fb5;
-    --shine: rgba(155, 155, 155, 0.4);
 }
 
 /* =========================
@@ -104,17 +99,18 @@ h1, h2, h3, h4, h5{
     text-decoration: underline var(--text) 1px !important;
     text-underline-offset: 3px;
 }
-
+/* .bg-hover-muted:hover{
+    background: var(--muted);
+} */
 /* =========================
    CARDS & UI ELEMENTS
 ========================= */
-.accent-border{
+.hover-border-accent{
     transition: all 200ms ease;
 }
-.accent-border:hover {
+.hover-border-accent:hover {
     border-color: var(--accent) !important;
 }
-
 /* =========================
    ICONS & LINKS
 ========================= */
@@ -129,6 +125,35 @@ h1, h2, h3, h4, h5{
     color: var(--accent) !important;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text);
+    font-size: larger;
+    font-family: monospace;
+    font-weight: bold;
+    background-color: var(--bg);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: all 200ms;
+}
+
+.logo:hover{
+    font-size: medium;
+    background: var(--text);
+    color: var(--bg);
+}
+
+.logo::after {
+    content: attr(data-text);
+}
+
+.logo:hover::after {
+    content: "hi";
+}
 .footer-link {
     display: flex;
     align-items: center;
@@ -169,24 +194,7 @@ h1, h2, h3, h4, h5{
 /* =========================
    OVERLAYS
 ========================= */
-
-.overlay-wrap {
-    position: relative;
-    display: inline-block;
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 300ms ease;
-}
-
-.overlay-wrap:hover .overlay {
-    opacity: 1;
-}
-
-.top-right {
+.map-overlay {
     position: absolute;
     top: 5px;
     right: 8px;
@@ -206,41 +214,6 @@ h1, h2, h3, h4, h5{
     backdrop-filter: blur(8px);
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.shine-effect {
-    position: relative;
-    overflow: hidden;
-}
-
-.shine-effect::before,
-.shine-effect::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 10px;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent 0%,
-        var(--shine) 50%,
-        transparent 100%
-    );
-    transform: skewX(-20deg);
-    opacity: 0;
-    transition: left 0.6s ease, opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.shine-effect::after {
-    transition-delay: 0.1s;
-}
-
-.shine-effect:hover::before,
-.shine-effect:hover::after {
-    left: 120%;
-    opacity: 1;
 }
 
 /* =========================
@@ -297,56 +270,8 @@ h1, h2, h3, h4, h5{
 }
 
 /* =========================
-   ORBITS & ANIMATIONS
-========================= */
-
-.orbit-big,
-.orbit-small {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 3px dotted rgba(var(--bs-secondary-rgb), 0.4);
-    position: relative;
-    animation: spin linear infinite;
-}
-
-.orbit-big {
-    width: 140px;
-    height: 140px;
-    animation-duration: 10s;
-}
-
-.orbit-small {
-    width: 70px;
-    height: 70px;
-    animation-duration: 5s;
-    animation-direction: reverse;
-}
-
-.orbit-big:hover,
-.orbit-small:hover {
-    animation-play-state: paused;
-}
-
-.orbit-icon {
-    position: absolute;
-    background-color: var(--bg);
-}
-
-/* icon positions */
-.i1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
-.i2 { top: 50%; right: 0; transform: translate(50%, -50%); }
-.i3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
-.i4 { top: 50%; left: 0; transform: translate(-50%, -50%); }
-
-/* =========================
    MISC
 ========================= */
-.logo-size {
-    width: 30px;
-}
-
 .speaker{
     color: var(--muted);
     transition: all 200ms;
@@ -399,4 +324,7 @@ h1, h2, h3, h4, h5{
     :root[data-bs-theme='light'] {
         --width: 90% !important;
     }
+    #map {
+    height: 120px;
+}
 }

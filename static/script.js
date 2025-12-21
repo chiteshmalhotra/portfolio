@@ -108,27 +108,32 @@ const map = new maplibregl.Map({
     container: "map",
     style: getMapStyle(initialTheme),
     center: [77.2090, 28.6139],
-    zoom: 11,
+    zoom: 3,
     attributionControl: false
 });
 
+map.on('load', () => {
+    map.flyTo({
+        zoom: 11,
+        speed: 0.8
+    });
+});
+
 // MARKER
-new maplibregl.Marker()
+new maplibregl.Marker({color:"#4ade80"})
     .setLngLat([77.2090, 28.6139])
     .addTo(map);
-new maplibregl.Marker()
+
+new maplibregl.Marker({color:"#fff700ff"})
     .setLngLat([76.93, 28.65])
     .addTo(map);
-
 
 function updateClock() {
     const now = new Date();
     const optionsIndia = { timeZone: 'Asia/Kolkata',hour: "numeric",  minute: 'numeric',  hour12: true };
     const timeIndia = new Intl.DateTimeFormat('en-IN', optionsIndia).format(now).toUpperCase();
-    //   console.log("Current Time:", now.toLocaleTimeString());
     document.getElementById('clock').innerText = timeIndia;
 }
 
-// Run updateClock every 1 second (1000 milliseconds)
 updateClock()
 let clockInterval = setInterval(updateClock, 60000);

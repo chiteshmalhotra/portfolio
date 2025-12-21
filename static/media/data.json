@@ -21,7 +21,7 @@
       ],
       "state":"Working",
       "url": "https://example.com/",
-      "image": "media/thumbnails/placeholder.png",
+      "image": "images/placeholder.png",
       "github": "https://github.com/chiteshmalhotra",
       "description": "This is a short description of the projectscription of the project. It explain coloreds what the project.This is a short description of the project.This is a short description of the project."
     },
@@ -35,7 +35,7 @@
       ],
       "state":"Completed",
       "url": "https://example.com/",
-      "image": "media/thumbnails/placeholder.png",
+      "image": "images/placeholder.png",
       "github": "https://github.com/chiteshmalhotra",
       "description": "Another project description goes here it concise and informative.Another project description goes here. Keep it concise and informative.Another project description goes here."
     }

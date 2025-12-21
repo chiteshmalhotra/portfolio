@@ -6,8 +6,7 @@
     <div class="d-flex flex-column gap-3 ">
         <div class="position-relative corner p-1">
             <div id="map"></div>
-            <div class="top-right bg-frost" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-title="X hours ahead :D">
+            <div class="map-overlay bg-frost rounded-1">
                 <div class="d-flex align-items-center gap-1">
                     <i class="ph ph-clock"></i>
                     <h6 class="font-monospace mb-0" id="clock"></h6>
@@ -70,20 +69,6 @@
     </div>
 </section>
 
-
-<!-- <div class="pt-3 mx-auto orbit">
-    <div class="orbit-big">
-        <i class="devicon-docker-plain text-warning orbit-icon fs-4 i1"></i>
-        <i class="devicon-numpy-plain colored orbit-icon fs-4 i2"></i>
-        <i class="devicon-pandas-plain text-danger orbit-icon fs-4 i3"></i>
-        <i class="devicon-azuresqldatabase-plain text-success orbit-icon fs-4 i4"></i>
-        <div class="orbit-small">
-            <i class="devicon-python-plain text-primary orbit-icon fs-4 i1"></i>
-            <i class="devicon-github-original orbit-icon fs-4 i3"></i>
-        </div>
-    </div>
-</div> -->
-
 <section class="section-padding">
     <div class=" d-flex align-items-center">
         <div class="d-flex align-items-center gap-2 pb-1 me-auto">
@@ -97,15 +82,13 @@
     </div>
     <div class="d-flex flex-column gap-3">
         {% for project in projects_data %}
-        <div class="card p-3 rounded-0 position-relative accent-border border">
-
+        <div class="p-3 border hover-border-accent position-relative rounded-1">
             <!-- Full-card clickable -->
             <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
             <div class="d-flex align-items-center mb-1">
                 <h4 class="fw-semibold me-auto mb-0">{{ project.title }}</h4>
-                <div class="badge rounded-pill border px-2 py-1 shine-effect me-2 fw-semibold d-flex gap-1 align-items-center text-normal
-                {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}"
-                    style="z-index: 5;">
+                <div class="badge rounded-pill border px-2 py-1me-2 fw-semibold d-flex gap-1 align-items-center text-normal
+                {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}">
                     <div
                         class="{% if project.state == 'Completed' %}dot bg-success{% else %}pulse-dot bg-warning{% endif %}">
                     </div>
@@ -121,19 +104,18 @@
                     <img src="{{ url_for('static', filename=project.image) }}" class="w-100">
                 </div>
 
-
                 <!-- Right Content -->
                 <div class="col-12 col-md-8 d-flex flex-column gap-2 ps-2 mt-3 mt-md-0">
                     <p class="text-muted small mb-0">
                         {{ project.description }}
                     </p>
 
-                    <div class="d-flex align-items-center flex-wrap my-auto gap-1" style="z-index: 5;">
+                    <div class="d-flex align-items-center flex-wrap my-auto gap-1">
                         {% for tag in project.tags %}
-                        <span class="badge rounded-pill border px-2 py-1 text-muted shine-effect">
+                        <div class="badge rounded-pill border px-2 py-1 text-muted bg-light-subtle">
                             {{ skills[tag]|safe }}
                             {{ tag|capitalize }}
-                        </span>
+                        </div>
                         {% endfor %}
                     </div>
 
@@ -167,7 +149,7 @@
     <div class="row g-3">
         <!-- About -->
         <div class="col-12 col-md-8 order-1 order-md-1">
-            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-sunglasses fs-5"></i>
                     <h5 class="mb-0">Chitesh Malhotra</h5>
@@ -190,7 +172,7 @@
 
         <!-- Music -->
         <div class="col-12 col-md-4 order-3 order-md-2">
-            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-empty fs-5"></i>
                     <h5 class="mb-0">Coming soon</h5>
@@ -201,7 +183,7 @@
         </div>
         <!-- Chess -->
         <div class="col-12 col-md-4 order-4 order-md-3">
-            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-castle-turret fs-5"></i>
                     <h5 class="mb-0">Chess</h5>
@@ -217,7 +199,7 @@
         </div>
         <!-- connect -->
         <div class="col-12 col-md-8 order-2 order-md-4">
-            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-coffee fs-5"></i>
                     <h5 class="mb-0">Let’s connect</h5>
@@ -241,7 +223,7 @@
             </div>
         </div>
         <!-- <div class="col-12 col-md-8">
-            <div class="border p-3 rounded-0 h-100 d-flex flex-column">
+            <div class="border p-3 h-100 d-flex flex-column">
                 <div class="d-flex align-items-center gap-1 mb-3">
                     <i class="ph ph-gear text-accent fs-5"></i>
                     <h5 class="mb-0">Stack</h5>
