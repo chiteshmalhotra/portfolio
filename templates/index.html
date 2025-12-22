@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- hero -->
 <section class="section-padding">
-
     <div class="d-flex flex-column gap-3 ">
+        <!-- map -->
         <div class="position-relative corner p-1">
             <div id="map"></div>
             <div class="map-overlay bg-frost rounded-1">
                 <div class="d-flex align-items-center gap-1">
-                    <i class="ph ph-clock"></i>
+                    <i class="ph ph-clock small"></i>
                     <h6 class="font-monospace mb-0" id="clock"></h6>
                 </div>
                 <div class="d-flex align-items-center gap-1 text-muted">
-                    <i class="ph ph-map-pin "></i>
+                    <i class="ph ph-map-pin small"></i>
                     <h6 class="font-monospace mb-0">India</h6>
                 </div>
             </div>
@@ -23,45 +24,49 @@
             <h1 class="fw-bold mb-0 " id="textToSpeak">Chitesh Malhotra</h1>
             <i class="ph ph-speaker-high fs-5 speaker" id="speakButton"></i>
         </div>
-        <p class="lead text-muted mb-1 fw-normal">
-            I am a <span class="fw-bold text-normal">Data Scientist</span> specializing in <span
-                class="fw-bold text-normal">Python ,Exploratory data analysis</span> and<span
-                class="fw-bold text-normal"> Data Visualization</span>.
-            I am currently expanding my expertise into web development.
-        </p>
+        <div>
+            <p class="lead text-muted mb-1 fw-normal">
+                I am a <span class="fw-bold text-normal">Data Scientist</span> specializing in
+                <span class="fw-bold text-normal">Python ,Exploratory data analysis</span> and
+                <span class="fw-bold text-normal"> Data Visualization</span>.
+                I am currently expanding my expertise into web development.
+            </p>
+            <a href="#about" class="icon-link icon-link-hover text-decoration-none text-muted lead ">More about me<svg
+                    xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 
+                4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg></a>
+        </div>
 
-        <!-- Buttons -->
         <div class="d-flex flex-column gap-2">
-
+            <!-- Buttons -->
             <div class="d-flex gap-2 flex-wrap">
                 <a href="{{ url_for('resume') }}" class="btn custom-btn-secondary d-flex align-items-center gap-1 fs-5">
                     <i class="ph ph-user"></i> Resume
                 </a>
-
                 <a href="{{ url_for('contact') }}" class="btn custom-btn-primary d-flex align-items-center gap-1 fs-5">
                     <i class="ph ph-paper-plane-tilt"></i> Get in touch
                 </a>
             </div>
-
             <!-- Social Icons -->
             <div class="d-flex gap-3">
                 <a href="{{ links.github_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" data-bs-title="{{ links.github }}">
+                    data-bs-title="{{ links.github }}">
                     <i class="ph ph-github-logo"></i>
                 </a>
 
                 <a href="{{ links.linkedin_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" data-bs-title="{{ links.linkedin }}">
+                    data-bs-title="{{ links.linkedin }}">
                     <i class="ph ph-linkedin-logo"></i>
                 </a>
 
                 <a href="{{ links.twitter_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" data-bs-title="{{ links.twitter }}">
+                    data-bs-title="{{ links.twitter }}">
                     <i class="ph ph-twitter-logo"></i>
                 </a>
 
                 <a href="{{ links.email_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" data-bs-title="{{ links.email }}">
+                    data-bs-title="{{ links.email }}">
                     <i class="ph ph-envelope-simple"></i>
                 </a>
             </div>
@@ -69,25 +74,29 @@
     </div>
 </section>
 
+<!-- projects -->
 <section class="section-padding">
-    <div class=" d-flex align-items-center">
+    <div class="d-flex align-items-center">
         <div class="d-flex align-items-center gap-2 pb-1 me-auto">
             <i class="ph ph-code fs-2 text-accent"></i>
             <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
         </div>
-        <a href="{{ url_for('projects')}}" class="arrow-link d-flex align-items-center">
-            <span class="small">View all</span>
-            <i class="ph ph-caret-double-right small"></i>
+        <a class="icon-link icon-link-hover text-decoration-none text-muted small" href="{{ url_for('projects')}}">
+            View all
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+            </svg>
         </a>
     </div>
     <div class="d-flex flex-column gap-3">
         {% for project in projects_data %}
-        <div class="p-3 border hover-border-accent position-relative rounded-1">
-            <!-- Full-card clickable -->
+        <div class="p-3 border hover-border-accent position-relative rounded-1 shadow-sm">
             <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
-            <div class="d-flex align-items-center mb-1">
+            <div class="d-flex align-items-center mb-1 gap-1">
                 <h4 class="fw-semibold me-auto mb-0">{{ project.title }}</h4>
-                <div class="badge rounded-pill border px-2 py-1me-2 fw-semibold d-flex gap-1 align-items-center text-normal
+                <div
+                    class="badge rounded-pill border px-2 py-1me-2 fw-semibold d-flex gap-1 align-items-center text-normal
                 {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}">
                     <div
                         class="{% if project.state == 'Completed' %}dot bg-success{% else %}pulse-dot bg-warning{% endif %}">
@@ -141,15 +150,16 @@
     </div>
 </section>
 
-<section class="section-padding">
+<!-- About -->
+<section class="section-padding" id="about">
     <div class="d-flex align-items-center gap-1 mb-0 me-auto">
         <i class="ph ph-person fs-3 text-accent pb-1"></i>
         <h2 class="fw-semibold mb-0 text-muted">About</h2>
     </div>
     <div class="row g-3">
-        <!-- About -->
+        <!-- me -->
         <div class="col-12 col-md-8 order-1 order-md-1">
-            <div class="border p-3 h-100 d-flex flex-column rounded-1">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-sunglasses fs-5"></i>
                     <h5 class="mb-0">Chitesh Malhotra</h5>
@@ -162,7 +172,7 @@
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     {% for skill, value in stack.items() %}
                     <div class="d-flex align-items-center gap-1 fs-5" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" data-bs-title="{{skill|capitalize}}">
+                        data-bs-title="{{skill|capitalize}}">
                         {{ value|safe }}
                     </div>
                     {% endfor %}
@@ -170,20 +180,19 @@
             </div>
         </div>
 
-        <!-- Music -->
+        <!-- Soon -->
         <div class="col-12 col-md-4 order-3 order-md-2">
-            <div class="border p-3 h-100 d-flex flex-column rounded-1">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-empty fs-5"></i>
                     <h5 class="mb-0">Coming soon</h5>
                 </div>
-
-
             </div>
         </div>
+
         <!-- Chess -->
         <div class="col-12 col-md-4 order-4 order-md-3">
-            <div class="border p-3 h-100 d-flex flex-column rounded-1">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-castle-turret fs-5"></i>
                     <h5 class="mb-0">Chess</h5>
@@ -197,9 +206,10 @@
                 </a>
             </div>
         </div>
+
         <!-- connect -->
         <div class="col-12 col-md-8 order-2 order-md-4">
-            <div class="border p-3 h-100 d-flex flex-column rounded-1">
+            <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
                     <i class="ph ph-coffee fs-5"></i>
                     <h5 class="mb-0">Let’s connect</h5>
@@ -222,23 +232,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="col-12 col-md-8">
-            <div class="border p-3 h-100 d-flex flex-column">
-                <div class="d-flex align-items-center gap-1 mb-3">
-                    <i class="ph ph-gear text-accent fs-5"></i>
-                    <h5 class="mb-0">Stack</h5>
-                </div>
-                <div class="d-flex flex-wrap align-items-center gap-2">
-                    {% for skill, value in stack.items() %}
-                    <div class="d-flex align-items-center gap-1 border rounded-2 px-1 shine-effect">
-                        <div class="fs-5">{{ value|safe }}</div>
-                        <span class="fw-medium">{{ skill|capitalize }}</span>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div> -->
     </div>
 </section>
-
 {% endblock %}

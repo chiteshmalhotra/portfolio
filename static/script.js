@@ -71,10 +71,10 @@ function copydetail(event, textToCopy) {
         tooltip.hide();
         icon.className = originalClass;
 
-        el.setAttribute("data-bs-original-title", "Click to Copy");
-        tooltip.setContent({ '.tooltip-inner': 'Click to Copy' });
+        el.setAttribute("data-bs-original-title", "Copy");
+        tooltip.setContent({ '.tooltip-inner': 'Copy' });
 
-    }, 2000);
+    }, 300);
 }
 
 

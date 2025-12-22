@@ -14,50 +14,47 @@
         <div class="col-md-4 d-flex order-2 order-md-1">
             <div class="card border p-3 w-100 rounded-0">
                 <div class=" d-flex flex-column gap-3">
-
-
                     <h5 class="fw-bold mb-0">Contact Details</h5>
-
                     <!-- Email -->
-                    <a href="mailto:{{ links.email }}" target="_blank" class="text-decoration-none fs-6 text-normal">
+                    <a href="mailto:{{ links.email }}" target="_blank" class="text-decoration-none fs-6 text-normal hover-reveal">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-envelope-simple"></i> Email
-                            <i class="ph ph-clipboard" onclick="copydetail(event, '{{ links.email }}')"
+                            <i class="ph ph-clipboard reveal-icon" onclick="copydetail(event, '{{ links.email }}')"
                                 data-bs-placement="right" data-bs-toggle="tooltip"
-                                data-bs-original-title="Click to Copy"></i>
+                                data-bs-original-title="Copy"></i>
                         </h6>
                         {{ links.email }}
                     </a>
 
                     <!-- GitHub -->
-                    <a href="{{ links.github_url }}" target="_blank" class="text-decoration-none fs-6 text-normal">
+                    <a href="{{ links.github_url }}" target="_blank" class="text-decoration-none fs-6 text-normal hover-reveal">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-github-logo"></i> Github
-                            <i class="ph ph-clipboard" onclick="copydetail(event, '{{ links.twitter_url }}')"
+                            <i class="ph ph-clipboard reveal-icon" onclick="copydetail(event, '{{ links.twitter_url }}')"
                                 data-bs-placement="right" data-bs-toggle="tooltip"
-                                data-bs-original-title="Click to Copy"></i>
+                                data-bs-original-title="Copy"></i>
                         </h6>
                         {{ links.github }}
                     </a>
 
                     <!-- Twitter -->
-                    <a href="{{ links.twitter_url }}" target="_blank" class="text-decoration-none fs-6 text-normal">
+                    <a href="{{ links.twitter_url }}" target="_blank" class="text-decoration-none fs-6 text-normal hover-reveal">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-twitter-logo"></i> Twitter
-                            <i class="ph ph-clipboard" onclick="copydetail(event, '{{ links.twitter_url }}')"
+                            <i class="ph ph-clipboard reveal-icon" onclick="copydetail(event, '{{ links.twitter_url }}')"
                                 data-bs-placement="right" data-bs-toggle="tooltip"
-                                data-bs-original-title="Click to Copy"></i>
+                                data-bs-original-title="Copy"></i>
                         </h6>
                         {{ links.twitter }}
                     </a>
 
                     <!-- LinkedIn -->
-                    <a href="{{ links.linkedin_url }}" target="_blank" class="text-decoration-none fs-6 text-normal">
+                    <a href="{{ links.linkedin_url }}" target="_blank" class="text-decoration-none fs-6 text-normal hover-reveal">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-linkedin-logo"></i> Linkedin
-                            <i class="ph ph-clipboard" onclick="copydetail(event, '{{ links.twitter_url }}')"
+                            <i class="ph ph-clipboard reveal-icon" onclick="copydetail(event, '{{ links.twitter_url }}')"
                                 data-bs-placement="right" data-bs-toggle="tooltip"
-                                data-bs-original-title="Click to Copy"></i>
+                                data-bs-original-title="Copy"></i>
                         </h6>
                         {{ links.linkedin }}
                     </a>
@@ -82,7 +79,9 @@
 
                     <input type="hidden" name="access_key" value="0b9a1fb9-c169-41ce-8981-11bd9925804f">
                     <input type="hidden" name="botcheck" class="form-control" style="display:none;">
-                    <input type="hidden" name="redirect" value="{{ url_for('home', _external=True) }}?mail_status=sent">
+                    <input type="hidden" name="redirect"
+       value="{{ url_for('home', mail_status='True', _external=True) }}">
+
 
                     <div class="mb-2">
                         <h6 class="fw-semibold mb-1 d-flex align-items-center">
@@ -108,17 +107,12 @@
                             placeholder="Your message or just say hello"></textarea>
                     </div>
 
-                    <div class="d-grid">
-                        <button type="submit" class="btn custom-btn-primary">
+                        <button type="submit" class="btn custom-btn-primary flex-grow-1">
                             <i class="ph ph-paper-plane-tilt me-1"></i> Send Message
                         </button>
-                    </div>
-
                 </form>
             </div>
         </div>
-
     </div>
-
 </section>
 {% endblock %}
