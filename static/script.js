@@ -137,3 +137,10 @@ function updateClock() {
 
 updateClock()
 let clockInterval = setInterval(updateClock, 60000);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.toast').forEach(toastEl => {
+        new bootstrap.Toast(toastEl).show();
+    });
+});

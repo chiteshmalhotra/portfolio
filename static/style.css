@@ -179,6 +179,7 @@ h1, h2, h3, h4, h5{
 
 .custom-btn-primary {
     color: var(--bg);
+    font-weight: 500;
     border-radius: 0.25rem;
     background: var(--accent);
     border: 1px solid var(--accent);
@@ -191,6 +192,7 @@ h1, h2, h3, h4, h5{
 }
 
 .custom-btn-secondary {
+    font-weight: 500;
     border-radius: 0.25rem;
     background-color: var(--bg);
     border: 1px solid var(--text);
@@ -199,6 +201,12 @@ h1, h2, h3, h4, h5{
 .custom-btn-secondary:focus {
     border: 1px solid var(--text);
     background-color: var(--bg-dark);
+}
+
+.toast {
+    max-width: none;      /* remove default max-width */
+    width: auto;          /* fit width to content */
+    min-width: 200px;     /* optional: set a minimum width */
 }
 
 /* form */
