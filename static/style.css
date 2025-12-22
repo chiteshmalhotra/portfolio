@@ -6,12 +6,17 @@
     --accent: #209fb5;
     --accent-dark:#1c8395;
     --muted: var(--bs-secondary);
-    --bg-dark:#212631;
+    --custom-bg-dark:black;
 }
 :root[data-bs-theme='light'] {
     --bg: white;
     --text: black;
-    --bg-dark:#f3f4f7;
+    --custom-bg-dark:#f3f4f7;
+}
+
+/* body */
+body{
+    background: var(--bg);
 }
 
 /* Font */
@@ -70,6 +75,10 @@ h1, h2, h3, h4, h5{
 .section-padding {
     padding: 60px 0;
     position: relative;
+}
+
+.custom-bg-dark{
+    background:var(--custom-bg-dark) ;
 }
 
 .text-accent {

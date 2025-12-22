@@ -37,16 +37,16 @@
 <body class="bg">
     <!-- TOP NAV -->
     <nav class="navbar sticky-top bg-frost">
-        <div class="main-width mx-auto d-flex align-items-center justify-content-between position-relative">
+        <div class="main-width mx-auto d-flex align-items-center justify-content-between">
 
             <!-- Brand -->
             <a href="{{ url_for('home') }}" class="logo" data-text="CM">
             </a>
 
-            <div class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3">
                 <!-- Theme Toggle -->
-                <a id="themeToggle" onclick="toggleTheme()" class="btn custom-btn-secondary btn-sm border-0">
-                    <i class="ph ph-moon fs-5"></i>
+                <a id="themeToggle" onclick="toggleTheme()" class="nav-link">
+                    <i class="ph ph-moon fs-6"></i>
                 </a>
                 <!-- Contact Button -->
                 <a href="{{ url_for('contact') }}" class="btn custom-btn-primary btn-sm">
