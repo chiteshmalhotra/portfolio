@@ -17,49 +17,49 @@
                     <h5 class="fw-bold mb-0">Contact Details</h5>
                     <!-- Email -->
                     <a href="mailto:{{ links.email }}" target="_blank"
-                        class="text-decoration-none fs-6 text-normal hover-reveal">
+                        class="text-decoration-none fs-6 text-normal hover-reveal hover-underline">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-envelope-simple"></i> Email
                             <i class="ph ph-clipboard reveal-icon" onclick="copydetail(event, '{{ links.email }}')"
                                 data-bs-placement="right" data-bs-toggle="tooltip" data-bs-original-title="Copy"></i>
                         </h6>
-                        {{ links.email }}
+                        <span>{{ links.email }}</span>
                     </a>
 
                     <!-- GitHub -->
                     <a href="{{ links.github_url }}" target="_blank"
-                        class="text-decoration-none fs-6 text-normal hover-reveal">
+                        class="text-decoration-none fs-6 text-normal hover-reveal hover-underline">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-github-logo"></i> Github
                             <i class="ph ph-clipboard reveal-icon"
                                 onclick="copydetail(event, '{{ links.twitter_url }}')" data-bs-placement="right"
                                 data-bs-toggle="tooltip" data-bs-original-title="Copy"></i>
                         </h6>
-                        {{ links.github }}
+                        <span>{{ links.github }}</span>
                     </a>
 
                     <!-- Twitter -->
                     <a href="{{ links.twitter_url }}" target="_blank"
-                        class="text-decoration-none fs-6 text-normal hover-reveal">
+                        class="text-decoration-none fs-6 text-normal hover-reveal hover-underline">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-twitter-logo"></i> Twitter
                             <i class="ph ph-clipboard reveal-icon"
                                 onclick="copydetail(event, '{{ links.twitter_url }}')" data-bs-placement="right"
                                 data-bs-toggle="tooltip" data-bs-original-title="Copy"></i>
                         </h6>
-                        {{ links.twitter }}
+                        <span>{{ links.twitter }}</span>
                     </a>
 
                     <!-- LinkedIn -->
                     <a href="{{ links.linkedin_url }}" target="_blank"
-                        class="text-decoration-none fs-6 text-normal hover-reveal">
+                        class="text-decoration-none fs-6 text-normal hover-reveal hover-underline">
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-linkedin-logo"></i> Linkedin
                             <i class="ph ph-clipboard reveal-icon"
                                 onclick="copydetail(event, '{{ links.twitter_url }}')" data-bs-placement="right"
                                 data-bs-toggle="tooltip" data-bs-original-title="Copy"></i>
                         </h6>
-                        {{ links.linkedin }}
+                        <span>{{ links.linkedin }}</span>
                     </a>
 
                     <!-- Address -->
@@ -67,7 +67,7 @@
                         <h6 class="mb-0 d-flex align-items-center text-muted gap-1">
                             <i class="ph ph-map-pin"></i> Address
                         </h6>
-                        New Delhi, India
+                        New Delhi-110043, India
                     </div>
                 </div>
             </div>

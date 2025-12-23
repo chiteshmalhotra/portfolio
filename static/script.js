@@ -130,13 +130,13 @@ new maplibregl.Marker({color:"#fff700ff"})
 
 function updateClock() {
     const now = new Date();
-    const optionsIndia = { timeZone: 'Asia/Kolkata',hour: "numeric",  minute: 'numeric',  hour12: true };
+    const optionsIndia = { timeZone: 'Asia/Kolkata',hour: "numeric",  minute: 'numeric', second:'numeric',  hour12: true };
     const timeIndia = new Intl.DateTimeFormat('en-IN', optionsIndia).format(now).toUpperCase();
     document.getElementById('clock').innerText = timeIndia;
 }
 
 updateClock()
-let clockInterval = setInterval(updateClock, 60000);
+let clockInterval = setInterval(updateClock, 1000);
 
 
 document.addEventListener("DOMContentLoaded", function () {

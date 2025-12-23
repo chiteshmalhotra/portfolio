@@ -1,17 +1,17 @@
 /* Theme */
 :root {
     --width: 750px;
-    --bg: #000;
+    --bg: black;
     --text: white;
-    --accent: #209fb5;
-    --accent-dark:#1c8395;
+    --accent: hsl(189, 70%, 42%);
+    --accent-dark:hsl(189, 70%, 32%);
     --muted: var(--bs-secondary);
-    --custom-bg-dark:black;
+    --color-bg-dark:hsl(0, 0%, 5%);
 }
 :root[data-bs-theme='light'] {
     --bg: white;
     --text: black;
-    --custom-bg-dark:#f3f4f7;
+    --color-bg-dark:hsl(0, 0%, 98%);
 }
 
 /* body */
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5{
 }
 
 .custom-bg-dark{
-    background:var(--custom-bg-dark) ;
+    background:var(--color-bg-dark) ;
 }
 
 .text-accent {
@@ -89,11 +89,26 @@ h1, h2, h3, h4, h5{
     color: var(--text) !important;
 }
 
+.hover-color-accent,
 .hover-border-accent{
     transition: all 200ms;
 }
 .hover-border-accent:hover {
     border-color: var(--accent) !important;
+}
+
+.hover-color-accent:hover{
+    color: var(--accent) !important;
+}
+
+.hover-underline span{
+    transition: all 200ms;
+}
+
+.hover-underline:hover span{
+    text-decoration: underline !important;
+    text-decoration-color: inherit !important;
+    text-underline-offset: 3px;
 }
 
 /* icon */
@@ -176,7 +191,6 @@ h1, h2, h3, h4, h5{
     pointer-events: auto;
 }
 
-
 /* frost effect */
 .bg-frost {
     backdrop-filter: blur(8px);
@@ -209,13 +223,13 @@ h1, h2, h3, h4, h5{
 .custom-btn-secondary:hover,
 .custom-btn-secondary:focus {
     border: 1px solid var(--text);
-    background-color: var(--bg-dark);
+    background-color: var(--color-bg-dark);
 }
 
 .toast {
-    max-width: none;      /* remove default max-width */
-    width: auto;          /* fit width to content */
-    min-width: 200px;     /* optional: set a minimum width */
+    max-width: none;    
+    width: auto;
+    min-width: 200px;
 }
 
 /* form */
