@@ -88,16 +88,11 @@ h1, h2, h3, h4, h5{
     color: var(--text) !important;
 }
 
-.hover-color-accent,
 .hover-border-accent{
     transition: all 200ms;
 }
 .hover-border-accent:hover {
     border-color: var(--accent) !important;
-}
-
-.hover-color-accent:hover{
-    color: var(--accent) !important;
 }
 
 .hover-underline span{
@@ -209,7 +204,7 @@ h1, h2, h3, h4, h5{
 .custom-btn-primary:hover,
 .custom-btn-primary:focus {
     color: var(--bg);
-    border: 1px solid var(--accent);
+    border: 1px solid var(--accent-dark) !important;
     background-color: var(--accent-dark) !important;
 }
 
@@ -217,7 +212,7 @@ h1, h2, h3, h4, h5{
     font-weight: 500;
     border-radius: 0.25rem;
     background-color: var(--bg);
-    border: 1px solid var(--text);
+    border: 1px solid var(--muted);
 }
 .custom-btn-secondary:hover,
 .custom-btn-secondary:focus {
@@ -274,21 +269,19 @@ h1, h2, h3, h4, h5{
 /* Theme change effect */
 @keyframes circle-reveal {
     from {
-        clip-path: circle(0 at 100% 0%);
+        clip-path: circle(0 at var(--vt-x) var(--vt-y));
     }
     to {
-        clip-path: circle(150vmax at 100% 0%);
+        clip-path: circle(150vmax at var(--vt-x) var(--vt-y));
     }
 }
 
 ::view-transition-old(root) {
     animation: none;
-    mix-blend-mode: normal;
 }
 
 ::view-transition-new(root) {
-    animation: circle-reveal 0.8s ease-out;
-    mix-blend-mode: normal;
+    animation: circle-reveal 0.7s ease-in-out;
 }
 
 /* RESPONSIVE */

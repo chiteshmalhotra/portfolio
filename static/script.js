@@ -4,9 +4,7 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 
 const tooltipList = [...tooltipTriggerList].map(el =>
-  new bootstrap.Tooltip(el, {
-    delay: { show: 200, hide: 0 }
-  })
+  new bootstrap.Tooltip(el)
 )
 
 
@@ -24,6 +22,17 @@ function toggleTheme() {
         return;
     }
 
+    // Get button position
+    const btn = document.getElementById('themeToggle');
+    const rect = btn.getBoundingClientRect();
+
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    // Set CSS variables for clip-path origin
+    document.documentElement.style.setProperty('--vt-x', `${x}px`);
+    document.documentElement.style.setProperty('--vt-y', `${y}px`);
+
     document.startViewTransition(() => {
         const html = document.documentElement;
     html.setAttribute('data-bs-theme', next);
@@ -32,7 +41,7 @@ function toggleTheme() {
     const toggleButton = document.getElementById('themeToggle');
     const icon = toggleButton?.querySelector('i');
     if (icon) {
-        icon.className = next === 'dark' ? 'ph ph-sun fs-6' : 'ph ph-moon fs-6';
+        icon.className = next === 'dark' ? 'ph ph-sun fs-5 align-middle' : 'ph ph-moon fs-5 align-middle';
     }
     if (typeof map !== 'undefined') map.setStyle(getMapStyle(next));
     });

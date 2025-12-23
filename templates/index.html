@@ -40,7 +40,7 @@
 
         <div class="d-flex flex-column gap-2">
             <!-- Buttons -->
-            <div class="d-flex gap-2 flex-wrap">
+            <div class="d-flex gap-3 flex-wrap">
                 <a href="{{ url_for('resume') }}" class="btn custom-btn-secondary d-flex align-items-center gap-1 fs-5">
                     <i class="ph ph-user"></i> Resume
                 </a>
@@ -50,22 +50,22 @@
             </div>
             <!-- Social Icons -->
             <div class="d-flex gap-3">
-                <a href="{{ links.github_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.github_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom" 
                     data-bs-title="{{ links.github }}">
                     <i class="ph ph-github-logo"></i>
                 </a>
 
-                <a href="{{ links.linkedin_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.linkedin_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom" 
                     data-bs-title="{{ links.linkedin }}">
                     <i class="ph ph-linkedin-logo"></i>
                 </a>
 
-                <a href="{{ links.twitter_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.twitter_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom" 
                     data-bs-title="{{ links.twitter }}">
                     <i class="ph ph-twitter-logo"></i>
                 </a>
 
-                <a href="{{ links.email_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip"
+                <a href="{{ links.email_url }}" target="_blank" class="icon fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom" 
                     data-bs-title="{{ links.email }}">
                     <i class="ph ph-envelope-simple"></i>
                 </a>
@@ -115,7 +115,7 @@
                 </div>
 
                 <!-- Right Content -->
-                <div class="col-12 col-md-8 d-flex flex-column gap-1 ps-2 mt-2 mt-md-0">
+                <div class="col-12 col-md-8 d-flex flex-column gap-1 ps-md-3 ps-0 mt-2 mt-md-0">
                     <p class="text-muted mb-0">
                         {{ project.description }}
                     </p>
@@ -172,7 +172,7 @@
                 <p class="mb-1 text-secondary text-thin font-monospace">Technologies</p>
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     {% for skill, value in stack.items() %}
-                    <div class="d-flex align-items-center gap-1 fs-5" data-bs-toggle="tooltip"
+                    <div class="d-flex align-items-center gap-1 fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" 
                         data-bs-title="{{skill|capitalize}}">
                         {{ value|safe }}
                     </div>
@@ -195,7 +195,7 @@
         <div class="col-12 col-md-4 order-4 order-md-3">
             <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-castle-turret fs-5 text-muted"></i>
+                    <i class="ph ph-horse fs-5 text-muted"></i>
                     <h5 class="mb-0">Chess</h5>
                 </div>
                 <p class="text-muted mb-3">
