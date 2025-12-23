@@ -15,32 +15,43 @@ const tooltipList = [...tooltipTriggerList].map(el =>
 // -----------------------
 function toggleTheme() {
     const html = document.documentElement;
-    const toggleButton = document.querySelector('[onclick="toggleTheme()"]');
-
     const current = html.getAttribute('data-bs-theme');
     const next = current === 'dark' ? 'light' : 'dark';
 
+    // Fallback for browsers that don't support the API
     if (!document.startViewTransition) {
-        html.setAttribute('data-bs-theme', next);
-    } else {
-        document.startViewTransition(() => {
-            html.setAttribute('data-bs-theme', next);
-        });
+        applyTheme(next);
+        return;
     }
 
-    // toggle icon (sun/moon)
-    const icon = toggleButton ? toggleButton.querySelector('i') : null;
+    document.startViewTransition(() => {
+        const html = document.documentElement;
+    html.setAttribute('data-bs-theme', next);
+
+    // Update icons/maps
+    const toggleButton = document.getElementById('themeToggle');
+    const icon = toggleButton?.querySelector('i');
     if (icon) {
-        icon.className = next === 'dark'
-            ? 'ph ph-sun fs-5'
-            : 'ph ph-moon fs-5';
+        icon.className = next === 'dark' ? 'ph ph-sun fs-6' : 'ph ph-moon fs-6';
     }
-
-    // update map theme ALSO
-    map.setStyle(getMapStyle(next));
-
-    return false;
+    if (typeof map !== 'undefined') map.setStyle(getMapStyle(next));
+    });
 }
+
+document.onkeydown = function(e){
+  e = e || window.event;
+  var key = e.which || e.keyCode;
+  if(key == 68){
+    toggleTheme();
+  }
+}
+
+// D Toggle shortcut
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.toast').forEach(toastEl => {
+        new bootstrap.Toast(toastEl).show();
+    });
+});
 
 
 // -----------------------
@@ -108,26 +119,29 @@ const map = new maplibregl.Map({
     container: "map",
     style: getMapStyle(initialTheme),
     center: [77.2090, 28.6139],
-    zoom: 3,
+    zoom: 8,
     attributionControl: false
 });
 
 map.on('load', () => {
     map.flyTo({
-        zoom: 11,
-        speed: 0.8
+        zoom: 12,
+        speed: 0.5
     });
 });
 
 // MARKER
-new maplibregl.Marker({color:"#4ade80"})
+new maplibregl.Marker({color:'var(--bs-success)'})
     .setLngLat([77.2090, 28.6139])
     .addTo(map);
 
-new maplibregl.Marker({color:"#fff700ff"})
+new maplibregl.Marker({color:"var(--bs-warning)"})
     .setLngLat([76.93, 28.65])
     .addTo(map);
 
+// -----------------------
+// CLOCK
+// -----------------------
 function updateClock() {
     const now = new Date();
     const optionsIndia = { timeZone: 'Asia/Kolkata',hour: "numeric",  minute: 'numeric', second:'numeric',  hour12: true };
@@ -137,10 +151,3 @@ function updateClock() {
 
 updateClock()
 let clockInterval = setInterval(updateClock, 1000);
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.toast').forEach(toastEl => {
-        new bootstrap.Toast(toastEl).show();
-    });
-});

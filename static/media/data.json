@@ -19,7 +19,7 @@
         "css3",
         "javascript"
       ],
-      "state":"Working",
+      "state":"Building",
       "url": "https://example.com/",
       "image": "images/placeholder.png",
       "github": "https://github.com/chiteshmalhotra",
@@ -33,7 +33,7 @@
         "html5",
         "css3"
       ],
-      "state":"Completed",
+      "state":"Finished",
       "url": "https://example.com/",
       "image": "images/placeholder.png",
       "github": "https://github.com/chiteshmalhotra",

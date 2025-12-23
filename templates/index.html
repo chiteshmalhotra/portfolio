@@ -7,8 +7,8 @@
         <!-- map -->
         <div class="position-relative corner p-1">
             <div id="map"></div>
-            <div class="map-overlay bg-frost rounded-1">
-                <div class="d-flex align-items-center gap-1">
+            <div class="map-overlay bg-frost">
+                <div class="d-flex align-items-center gap-1 mb-1">
                     <i class="ph ph-clock small"></i>
                     <h6 class="font-monospace mb-0" id="clock"></h6>
                 </div>
@@ -24,18 +24,18 @@
             <h1 class="fw-bold mb-0 " id="textToSpeak">Chitesh Malhotra</h1>
             <i class="ph ph-speaker-high fs-5 speaker" id="speakButton"></i>
         </div>
-        <div>
+        <div class="mb-2">
             <p class="lead text-muted mb-0 fw-normal">
                 I am a <span class="fw-bold text-normal">Data Scientist</span> specializing in
                 <span class="fw-bold text-normal">Python ,Exploratory data analysis</span> and
                 <span class="fw-bold text-normal"> Data Visualization</span>.
-                I am currently expanding my expertise into web development.
-            </p>
-            <a href="#about" class="icon-link icon-link-hover text-decoration-none text-muted lead ">More about me<svg
-                    xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
-                    <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 
+                I am currently expanding my expertise into web development.<a href="#about"
+                    class="icon-link icon-link-hover link-secondary link-underline link-underline-opacity-0 link-underline-opacity-50-hover hover-reveal">Learn more<svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 
                 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                </svg></a>
+                    </svg></a>
+            </p>
+
         </div>
 
         <div class="d-flex flex-column gap-2">
@@ -81,7 +81,8 @@
             <i class="ph ph-code fs-2 text-accent"></i>
             <h2 class="fw-semibold mb-0 text-muted">Projects</h2>
         </div>
-        <a class="icon-link icon-link-hover text-decoration-none text-muted small" href="{{ url_for('projects')}}">
+        <a class="icon-link icon-link-hover link-secondary link-underline link-underline-opacity-0 link-underline-opacity-75-hover small"
+            href="{{ url_for('projects')}}">
             View all
             <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
                 <path
@@ -93,42 +94,42 @@
         {% for project in projects_data %}
         <div class="p-3 border hover-border-accent position-relative rounded-1 shadow-sm">
             <a href="{{ project.url }}" class="stretched-link" target="_blank"></a>
-            <div class="d-flex align-items-center mb-1 gap-1">
+            <div class="d-flex align-items-center mb-2 gap-2 flex-wrap">
                 <h4 class="fw-semibold me-auto mb-0">{{ project.title }}</h4>
                 <div
                     class="badge rounded-pill border px-2 py-1me-2 fw-semibold d-flex gap-1 align-items-center text-normal
-                {% if project.state == 'Completed' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}">
+                    {% if project.state == 'Finished' %}border-success bg-success-subtle{% else %}border-warning bg-warning-subtle{% endif %}">
                     <div
-                        class="{% if project.state == 'Completed' %}dot bg-success{% else %}pulse-dot bg-warning{% endif %}">
+                        class="{% if project.state == 'Finished' %}dot bg-success{% else %}pulse-dot bg-warning{% endif %}">
                     </div>
                     {{ project.state }}
                 </div>
-
-                <i class="ph ph-push-pin fs-5"></i>
+                <i class="ph ph-push-pin fs-5 text-muted" data-bs-toggle="tooltip"
+                    data-bs-original-title="Pinned project" style="z-index: 5;"></i>
             </div>
             <div class="row g-0">
 
                 <!-- Image -->
-                <div class="col-12 col-md-4 corner p-1">
+                <div class="col-12 col-md-4 corner p-1 mb-md-auto">
                     <img src="{{ url_for('static', filename=project.image) }}" class="w-100">
                 </div>
 
                 <!-- Right Content -->
-                <div class="col-12 col-md-8 d-flex flex-column gap-2 ps-2 mt-3 mt-md-0">
-                    <p class="text-muted small mb-0">
+                <div class="col-12 col-md-8 d-flex flex-column gap-1 ps-2 mt-2 mt-md-0">
+                    <p class="text-muted mb-0">
                         {{ project.description }}
                     </p>
 
-                    <div class="d-flex align-items-center flex-wrap my-auto gap-1">
+                    <div class="d-flex align-items-center flex-wrap my-auto gap-1 mt-2 mt-md-0">
                         {% for tag in project.tags %}
-                        <div class="badge rounded-pill border px-2 py-1 text-muted custom-bg-dark">
+                        <div class="badge rounded-pill border px-2 py-1 text-normal custom-bg-dark d-flex gap-1">
                             {{ skills[tag]|safe }}
                             {{ tag|capitalize }}
                         </div>
                         {% endfor %}
                     </div>
 
-                    <div class="d-flex align-items-center gap-2">
+                    <div class="d-flex align-items-center flex-wrap gap-2 mt-2 mt-md-0">
                         <a href="{{ project.github }}"
                             class="btn custom-btn-secondary d-flex align-items-center gap-1 small btn-sm"
                             style="z-index: 5;" target="_blank">
@@ -161,7 +162,7 @@
         <div class="col-12 col-md-8 order-1 order-md-1">
             <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-sunglasses fs-5"></i>
+                    <i class="ph ph-sunglasses fs-5 text-muted"></i>
                     <h5 class="mb-0">Chitesh Malhotra</h5>
                 </div>
                 <p class="text-muted">
@@ -184,7 +185,7 @@
         <div class="col-12 col-md-4 order-3 order-md-2">
             <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-empty fs-5"></i>
+                    <i class="ph ph-empty fs-5 text-muted"></i>
                     <h5 class="mb-0">Coming soon</h5>
                 </div>
             </div>
@@ -194,11 +195,11 @@
         <div class="col-12 col-md-4 order-4 order-md-3">
             <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-castle-turret fs-5"></i>
+                    <i class="ph ph-castle-turret fs-5 text-muted"></i>
                     <h5 class="mb-0">Chess</h5>
                 </div>
-                <p class="text-muted small mb-3">
-                    Chess is my addiction and I’m deep into it.
+                <p class="text-muted mb-3">
+                    Chess is my addiction and I’m deep into it :D
                 </p>
                 <a href="https://www.chess.com/member/chitesh_malhotra" target="_blank"
                     class="btn custom-btn-primary btn-sm d-flex align-items-center justify-content-center gap-2 mt-auto">
@@ -211,10 +212,10 @@
         <div class="col-12 col-md-8 order-2 order-md-4">
             <div class="border p-3 h-100 d-flex flex-column rounded-1 shadow-sm">
                 <div class="d-flex align-items-center gap-1 mb-2">
-                    <i class="ph ph-coffee fs-5"></i>
+                    <i class="ph ph-coffee fs-5 text-muted"></i>
                     <h5 class="mb-0">Let’s connect</h5>
                 </div>
-                <p class="text-muted small mb-3">
+                <p class="text-muted mb-3">
                     Currently seeking Data Science or Analytics roles — internship or full-time.
                     Always open to interesting projects and conversations.
                 </p>

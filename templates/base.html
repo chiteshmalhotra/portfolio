@@ -45,7 +45,8 @@
 
             <div class="d-flex align-items-center gap-2">
                 <!-- Theme Toggle -->
-                <a id="themeToggle" onclick="toggleTheme()" class="btn custom-btn-secondary border-0 btn-sm hover-color-accent">
+                <a id="themeToggle" onclick="toggleTheme(event)" class="btn custom-btn-secondary border-0 btn-sm hover-color-accent"
+                 data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Toggle Theme (D)">
                     <i class="ph ph-moon fs-6 lh-base"></i>
                 </a>
                 <!-- Contact Button -->
@@ -78,7 +79,7 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="footer bg-black text-white py-5">
+    <footer class="footer bg-black text-white py-5 border border-secondary border-top-1 border-start-0 bordr-end-0 border-bottom-0">
         <!-- Back to top -->
         <div class="text-center mb-4">
             <a href="#top" id="backBtn"
@@ -97,12 +98,12 @@
                 <p class="small text-secondary">
                     © 2026 · Built and designed with <i class="ph ph-heart text-danger"></i> by me.
                 </p>
-                <div class="d-flex gap-2">
-                    <div class="badge rounded-pill border d-flex text-white align-items-center gap-2">
+                <div class="d-flex flex-wrap gap-2">
+                    <div class="badge rounded-pill border d-flex text-white align-items-center gap-2 border-success">
                         <div class="pulse-dot bg-success"></div> Open to work
                     </div>
-                    <div class="badge rounded-pill border d-flex text-white align-items-center gap-2"><i
-                            class="ph ph-map-pin text-success"></i>New Delhi, India
+                    <div class="badge rounded-pill border d-flex text-white align-items-center gap-1 border-secondary"><i
+                            class="ph ph-map-pin"></i>New Delhi, India
                     </div>
                 </div>
             </div>
