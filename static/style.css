@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5{
 }
 
 .pulse-dot {
-    animation: pulse 1s infinite;
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {

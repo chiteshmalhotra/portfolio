@@ -80,26 +80,17 @@
     </main>
 
     <footer class="footer bg-black text-white py-5 border border-secondary border-top-1 border-start-0 bordr-end-0 border-bottom-0">
-        <!-- Back to top -->
-        <div class="text-center mb-4">
-            <a href="#top" id="backBtn"
-                class="footer-link text-decoration-none px-3 py-2 d-inline-flex align-items-center gap-2 border rounded-0">
-                <i class="ph ph-arrow-up fs-5"></i>
-                <span>Back to top</span>
-            </a>
-        </div>
-
         <!-- Main footer content -->
         <div class="main-width mx-auto d-flex justify-content-between flex-wrap gap-4">
 
             <!-- Left -->
             <div>
-                <h4 class="fw-bold mb-2">Chitesh Malhotra</h4>
+                <h4 class="fw-bold mb-0">Chitesh Malhotra</h4>
                 <p class="small text-secondary">
                     © 2026 · Built and designed with <i class="ph ph-heart text-danger"></i> by me.
                 </p>
                 <div class="d-flex flex-wrap gap-2">
-                    <div class="badge rounded-pill border d-flex text-white align-items-center gap-2 border-success">
+                    <div class="badge rounded-pill border d-flex text-white align-items-center gap-1 border-success">
                         <div class="pulse-dot bg-success"></div> Open to work
                     </div>
                     <div class="badge rounded-pill border d-flex text-white align-items-center gap-1 border-secondary"><i
@@ -118,11 +109,11 @@
                     <a href="{{ url_for('projects') }}" class="footer-link">
                         <i class="ph ph-code fs-5"></i> Projects
                     </a>
-                    <a href="{{ url_for('resume') }}" class="footer-link">
-                        <i class="ph ph-user fs-5"></i> Resume
-                    </a>
                     <a href="{{ url_for('contact') }}" class="footer-link">
                         <i class="ph ph-phone fs-5"></i> Contact
+                    </a>
+                    <a href="{{ url_for('resume') }}" class="footer-link">
+                        <i class="ph ph-user fs-5"></i> Resume
                     </a>
                 </div>
             </div>
